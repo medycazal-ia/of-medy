@@ -67,7 +67,20 @@ textarea{width:100%;min-height:80px;border-radius:8px;border:1px solid var(--lin
 .tbl tr.fin td{font-weight:700;background:var(--sky);color:#1f1f1d}
 .opt.win{border:2px solid var(--ok)}
 .opt p{margin:6px 0}
-footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
+section{scroll-margin-top:52px}
+#pbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ink);color:var(--bg);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;font:14px system-ui,sans-serif}
+#pbar.on{display:block}
+#pbar .r{display:flex;align-items:center;gap:10px;max-width:1040px;margin:0 auto}
+#pbar button{background:transparent;color:inherit;border:1px solid currentColor;border-radius:8px;min-width:40px;height:38px;font:600 15px system-ui,sans-serif;cursor:pointer}
+#pbar button.main{background:var(--blue);border-color:var(--blue);color:#fff;min-width:48px}
+#pbar .t{flex:1;min-width:0}
+#pbar .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#pbar .bar{height:4px;background:rgba(127,127,127,.4);border-radius:2px;margin-top:6px;overflow:hidden}
+#pbar .bar i{display:block;height:100%;width:0;background:var(--sky)}
+#pv{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:19;width:min(260px,52vw);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.35);background:#000;display:none}
+#pv.on{display:block}
+body.playing section.cur .wrap{outline:3px solid var(--sky);outline-offset:8px;border-radius:6px}
+footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
 </style>
 <nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#portage">Portage</a><a href="#droits">Droits</a><a href="#cdd">CDD transitoire</a><a href="#tresorerie">Trésorerie</a><a href="#contacts">Contacts</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
 
@@ -76,7 +89,7 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
     <p class="kicker" style="color:#ddd">Dossier de présentation</p>
     <h1>Maintenir maman à domicile sans laisser la famille seule face au financement</h1>
     <p>Une organisation familiale, professionnelle et financière à étudier pour sécuriser son retour et son maintien à domicile après AVC.</p>
-    <a class="btn" href="#studio">Valider avatar, voix et synchro labiale</a>
+    <button class="btn" id="startpres" type="button">▶ Lancer la présentation (≈ 4 min, avec le son)</button> <a class="btn ghost" href="#studio">Valider avatar, voix et synchro</a>
   </div>
 </header>
 
@@ -322,6 +335,14 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
 
 <footer><div class="wrap">Présentation générée à partir du dossier « Maintenir maman à domicile sans laisser la famille seule face au financement », mise à jour avec le dossier stratégique, juridique et financier V4 (novembre 2026). Montants et droits : hypothèses du dossier, à confirmer auprès des organismes concernés. Voix : ElevenLabs. Avatars : catalogue Arcads.</div></footer>
 
+<video id="pv" playsinline preload="none" poster="assets/video/lipsync-corbin.jpg" src="assets/video/lipsync-corbin.mp4"></video>
+<div id="pbar" role="region" aria-label="Lecture de la présentation"><div class="r">
+  <button id="pprev" type="button" aria-label="Section précédente">⏮</button>
+  <button id="pplay" class="main" type="button" aria-label="Pause ou lecture">⏸</button>
+  <button id="pnext" type="button" aria-label="Section suivante">⏭</button>
+  <div class="t"><b id="plabel">Présentation</b><div class="bar"><i id="pprog"></i></div></div>
+  <button id="pstop" type="button" aria-label="Quitter la présentation">✕</button>
+</div></div>
 <script>
 (function(){
   var t=document.getElementById('thumbs');
@@ -352,6 +373,52 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
     if(navigator.clipboard){navigator.clipboard.writeText(txt).then(done,function(){window.prompt('Copiez :',txt)})}else{window.prompt('Copiez :',txt)}
   });
   render();
+
+  // ---- Lecture automatique de la présentation ----
+  var steps=[
+    {id:'top',t:'Introduction (vidéo)',v:true},
+    {id:'besoin',t:'Le besoin',a:'assets/audio/nar-besoin.mp3'},
+    {id:'montage',t:'Le montage',a:'assets/audio/nar-montage.mp3'},
+    {id:'aides',t:'Le financement',a:'assets/audio/nar-aides.mp3'},
+    {id:'simulation',t:'La simulation',a:'assets/audio/nar-simulation.mp3'},
+    {id:'portage',t:'Le portage',a:'assets/audio/nar-portage.mp3'},
+    {id:'droits',t:'Les droits',a:'assets/audio/nar-droits.mp3'},
+    {id:'cdd',t:'Le CDD transitoire',a:'assets/audio/nar-cdd.mp3'},
+    {id:'tresorerie',t:'La trésorerie',a:'assets/audio/nar-tresorerie.mp3'},
+    {id:'contacts',t:'Les contacts',a:'assets/audio/nar-contacts.mp3'},
+    {id:'avant',t:'Avant de signer',a:'assets/audio/nar-avant.mp3'}
+  ];
+  var i=0,on=false,au=new Audio(),pv=document.getElementById('pv'),bar=document.getElementById('pbar'),
+      lab=document.getElementById('plabel'),prog=document.getElementById('pprog'),pl=document.getElementById('pplay');
+  au.preload='auto';
+  function cur(){return steps[i].v?pv:au}
+  function mark(){
+    document.querySelectorAll('section.cur').forEach(function(x){x.classList.remove('cur')});
+    var el=document.getElementById(steps[i].id); if(el&&el.tagName==='SECTION')el.classList.add('cur');
+  }
+  function go(n){
+    if(n<0)n=0; if(n>=steps.length){stop();return}
+    au.pause(); pv.pause(); i=n; on=true;
+    document.body.classList.add('playing'); bar.classList.add('on');
+    lab.textContent=(i+1)+'/'+steps.length+' · '+steps[i].t; prog.style.width='0';
+    mark();
+    var st=steps[i];
+    if(st.v){pv.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});pv.currentTime=0;pv.play().catch(fail)}
+    else{pv.classList.remove('on');var el=document.getElementById(st.id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});au.src=st.a;au.play().catch(fail)}
+    pl.textContent='⏸';
+  }
+  function fail(){pl.textContent='▶';lab.textContent='Appuyez sur ▶ pour lire (le navigateur a bloqué le son)'}
+  function stop(){on=false;au.pause();pv.pause();pv.classList.remove('on');bar.classList.remove('on');document.body.classList.remove('playing');mark();document.querySelectorAll('section.cur').forEach(function(x){x.classList.remove('cur')})}
+  function tick(m){if(m.duration)prog.style.width=(100*m.currentTime/m.duration)+'%'}
+  au.addEventListener('timeupdate',function(){tick(au)});
+  pv.addEventListener('timeupdate',function(){tick(pv)});
+  au.addEventListener('ended',function(){if(on)go(i+1)});
+  pv.addEventListener('ended',function(){if(on)go(i+1)});
+  document.getElementById('startpres').addEventListener('click',function(){go(0)});
+  document.getElementById('pnext').addEventListener('click',function(){go(i+1)});
+  document.getElementById('pprev').addEventListener('click',function(){go(i-1)});
+  document.getElementById('pstop').addEventListener('click',stop);
+  pl.addEventListener('click',function(){var m=cur();if(m.paused){m.play();pl.textContent='⏸'}else{m.pause();pl.textContent='▶'}});
 })();
 </script>
 
