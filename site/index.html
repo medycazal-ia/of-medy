@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maintenir maman à domicile — présentation du dossier</title>
+<meta name="description" content="Présentation du dossier : organisation familiale, professionnelle et financière pour sécuriser le maintien à domicile après AVC.">
+<style>
+:root{--bg:#f1eee7;--card:#e7e2d4;--ink:#1f1f1d;--mute:#6b6a64;--blue:#2f7fd0;--sky:#90c6ec;--line:#cfc9b8;--ok:#2e7d4f;--warn:#b45a1f}
+@media (prefers-color-scheme:dark){:root{--bg:#161715;--card:#23241f;--ink:#f1eee7;--mute:#a6a498;--line:#3a3b34}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Georgia,"Times New Roman",serif}
+h1,h2,h3,.sans{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--blue)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;padding:12px 16px;font:14px system-ui,sans-serif;white-space:nowrap}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#fff;background:#222 url(assets/slides/s-1.jpg) center/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72))}
+.hero .wrap{position:relative;z-index:1;padding-bottom:48px}
+.hero h1{font-weight:400;font-size:clamp(32px,6vw,62px);line-height:1.08;margin:0 0 14px;max-width:16em}
+.hero p{max-width:40em;margin:0 0 20px;font-size:19px}
+.btn{display:inline-block;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:11px 18px;font:600 15px system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid currentColor;color:inherit}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+.kicker{font:13px system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 6px}
+h2{font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.12;margin:0 0 22px;max-width:20em}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border-radius:10px;padding:20px}
+.card h3{margin:0 0 6px;font-weight:500;font-size:20px}
+.big{font:300 clamp(34px,5vw,50px)/1.05 system-ui,sans-serif;margin:6px 0}
+.note{font:14px system-ui,sans-serif;color:var(--mute);margin-top:14px}
+.flow{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center}
+.flow .src>div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px;display:flex;justify-content:space-between;gap:10px;font-family:system-ui,sans-serif}
+.flow .src small{display:block;color:var(--mute)}
+.flow .hub{background:var(--blue);color:#fff;border-radius:10px;padding:28px 20px;text-align:center;font-family:system-ui,sans-serif}
+.arrow{font-size:30px;color:var(--mute)}
+@media(max-width:720px){.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}}
+.bars .row{display:flex;align-items:center;gap:12px;margin:10px 0;font-family:system-ui,sans-serif}
+.bars .lab{width:60px}.bars .track{flex:1;background:var(--card);border-radius:6px}
+.bars .bar{height:34px;border-radius:6px;color:#fff;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-weight:600}
+.steps{counter-reset:s}.steps .card{border-top:3px solid var(--blue)}
+.steps .card::before{counter-increment:s;content:"0" counter(s);font:600 14px system-ui,sans-serif;color:var(--mute)}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.thumbs img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+/* studio */
+#studio{background:color-mix(in srgb,var(--card) 55%,var(--bg))}
+.pick{border:2px solid transparent;position:relative}
+.pick.sel{border-color:var(--ok)}
+.badge{display:inline-block;font:600 12px system-ui,sans-serif;padding:3px 9px;border-radius:99px;background:var(--ok);color:#fff;margin-left:6px;vertical-align:middle}
+.badge.off{background:var(--warn)}
+.pick audio{width:100%;margin:10px 0}
+.pick img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;background:#000}
+.row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.row2 label{font:14px system-ui,sans-serif;display:flex;align-items:center;gap:6px;cursor:pointer}
+textarea{width:100%;min-height:80px;border-radius:8px;border:1px solid var(--line);padding:10px;font:15px system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+.script{background:var(--bg);border-left:4px solid var(--blue);padding:14px 18px;border-radius:6px;margin:0 0 22px}
+.stat{font:14px system-ui,sans-serif;margin:14px 0 0;padding:12px 14px;border-radius:8px;background:var(--bg);border:1px dashed var(--warn)}
+footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#droits">Droits</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker" style="color:#ddd">Dossier de présentation</p>
+    <h1>Maintenir maman à domicile sans laisser la famille seule face au financement</h1>
+    <p>Une organisation familiale, professionnelle et financière à étudier pour sécuriser son retour et son maintien à domicile après AVC.</p>
+    <a class="btn" href="#studio">Valider avatar, voix et synchro labiale</a>
+  </div>
+</header>
+
+<section id="besoin"><div class="wrap">
+  <p class="kicker">Le besoin à couvrir</p>
+  <h2>Le besoin est concret : 57 heures d’accompagnement chaque semaine</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Situation</h3><p>Bénéficiaire de 80 ans, hémiplégie droite après AVC, classée GIR 1 ou GIR 2.</p></div>
+    <div class="card"><h3>Objectif</h3><p>Couvrir les temps d’aide au domicile, les relèves, les week-ends et les jours de CFA.</p></div>
+  </div>
+  <p class="note">Le volume présenté repose sur les hypothèses du dossier et doit être confirmé.</p>
+</div></section>
+
+<section id="montage"><div class="wrap">
+  <p class="kicker">Une coordination unique</p>
+  <h2>Un employeur unique coordonne trois contrats complémentaires</h2>
+  <div class="flow">
+    <div class="src">
+      <div><span>Apprenti principal<small>prépare le TP ADVF</small></span><b>44 h/sem.</b></div>
+      <div><span>Proche tuteur<small>salarié Cesu, titulaire du TP ADVF</small></span><b>4 h/sem.</b></div>
+      <div><span>Sœur relais<small>relèves et absences</small></span><b>9 h/sem.</b></div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="hub"><div style="font-size:22px">Employeur unique</div><p style="margin:8px 0 0">57 h/semaine · environ 247 h/mois</p></div>
+  </div>
+  <p class="note">Le montage répartit les rôles sans multiplier les interlocuteurs. Les horaires et contrats restent à vérifier.</p>
+  <h3 style="margin:34px 0 14px;font-weight:400;font-size:24px">Aide, emploi, formation : transformer l’aide familiale en emploi déclaré et formateur</h3>
+  <div class="grid g3">
+    <div class="card"><h3>Un parcours qualifiant</h3><p>Le contrat principal prépare au Titre Professionnel Assistant de Vie aux Familles et s’inscrit dans un projet de création d’activité.</p></div>
+    <div class="card"><h3>Un tutorat rémunéré</h3><p>Le proche tuteur est rémunéré pour sa fonction d’accompagnement pédagogique.</p></div>
+    <div class="card"><h3>Un relais compatible</h3><p>La sœur conserve son emploi principal et intervient en relais dans la limite présentée par le dossier.</p></div>
+  </div>
+</div></section>
+
+<section id="aides"><div class="wrap">
+  <p class="kicker">Les leviers de financement</p>
+  <h2>Les aides publiques portent une grande partie du coût</h2>
+  <div class="grid g3">
+    <div class="card"><h3>APA</h3><div class="big">1 567,90 €</div><p>nets mobilisés en hypothèse GIR 2<br><small class="sans">1 938,87 € en hypothèse GIR 1.</small></p></div>
+    <div class="card" style="background:var(--sky);color:#1f1f1d"><h3>Aide à l’embauche</h3><div class="big">5 000 €</div><p>sur la première année<br><small class="sans">416,67 € par mois dans la simulation.</small></p></div>
+    <div class="card"><h3>Crédit d’impôt</h3><div class="big">50 %</div><p>du montant éligible<br><small class="sans">Plafond présenté : 20 000 € par an grâce à la CMI invalidité.</small></p></div>
+  </div>
+  <p class="note">Ces montants viennent du dossier : ils doivent être confirmés avec les organismes concernés.</p>
+</div></section>
+
+<section id="simulation"><div class="wrap">
+  <p class="kicker">Simulation du dossier</p>
+  <h2>Le reste à charge final varie selon le classement APA</h2>
+  <div class="bars">
+    <div class="row"><span class="lab">GIR 2</span><div class="track"><div class="bar" style="width:100%;background:#e8622a">676,79 € / mois</div></div></div>
+    <div class="row"><span class="lab">GIR 1</span><div class="track"><div class="bar" style="width:72.6%;background:#3e9a46">491,31 € / mois</div></div></div>
+  </div>
+  <p>Soit 8 121,50 € par an en GIR 2 et 5 895,68 € par an en GIR 1. Le classement GIR 1 réduit davantage le reste à charge mensuel.</p>
+  <p class="note">Hypothèses du dossier. Ces montants ne constituent pas une garantie.</p>
+</div></section>
+
+<section id="droits"><div class="wrap">
+  <p class="kicker">Au-delà du salaire</p>
+  <h2>Les contrats donnent aussi des droits sociaux aux proches salariés</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Retraite</h3><p>Le dossier présente une validation possible de quatre trimestres de retraite par an pour l’apprenti principal.</p></div>
+    <div class="card"><h3>Protection</h3><p>Les salariés bénéficient d’une couverture liée au travail, à la maladie et à la prévoyance selon le cadre applicable.</p></div>
+    <div class="card"><h3>Fin de contrat</h3><p>En cas de décès de l’employeur, les contrats prennent fin selon la procédure prévue et peuvent ouvrir des droits de fin de contrat.</p></div>
+  </div>
+  <p class="note">Les droits exacts dépendent du cadre applicable et doivent être vérifiés.</p>
+</div></section>
+
+<section id="avant"><div class="wrap">
+  <p class="kicker">Avant de s’engager</p>
+  <h2>La priorité est de sécuriser le dossier avant toute signature</h2>
+  <div class="grid g2 steps" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="card"><h3>Notification APA</h3><p>Obtenir la notification écrite, provisoire ou définitive, avant de fixer le début des contrats.</p></div>
+    <div class="card"><h3>Éligibilité</h3><p>Faire confirmer la dérogation d’âge et le parcours par le CFA et l’OPCO.</p></div>
+    <div class="card"><h3>Relecture</h3><p>Faire relire les contrats par un professionnel compétent ou un Point-Justice.</p></div>
+    <div class="card"><h3>Vérification</h3><p>Vérifier les calculs, les plafonds et les règles Cesu avec les organismes concernés.</p></div>
+  </div>
+  <p class="note">Cette étape de validation humaine est indispensable sur les points juridiques, sociaux et financiers.</p>
+  <h3 style="margin:34px 0 8px;font-weight:400;font-size:26px">Une décision familiale à prendre ensemble</h3>
+  <p>Le projet mérite d’être étudié collectivement : protéger maman, formaliser l’aide et vérifier chaque étape avant de s’engager.</p>
+  <h3 style="margin:34px 0 12px;font-weight:400;font-size:20px">Les 9 pages du dossier</h3>
+  <div class="thumbs" id="thumbs"></div>
+</div></section>
+
+<section id="studio"><div class="wrap">
+  <p class="kicker">Studio de validation</p>
+  <h2>Choisissez l’avatar, la voix off et validez la synchronisation labiale</h2>
+  <div class="script"><b class="sans">Texte test (intro, ≈ 20 s) :</b><br>« Maintenir maman à domicile, sans laisser la famille seule face au financement. Après son AVC, maman a besoin de cinquante-sept heures d’accompagnement chaque semaine. Ce dossier propose un employeur unique, trois contrats complémentaires, et des aides publiques qui portent une grande partie du coût. Avant toute signature, chaque point doit être vérifié ensemble. »</div>
+
+  <h3>1 · Voix off <span class="sans" style="font-size:14px;color:var(--mute)">(ElevenLabs, modèle eleven_v4, français)</span></h3>
+  <div class="grid g3" id="voices">
+    <div class="card pick" data-kind="voice" data-id="homme56">
+      <h3>Homme français 56 ans <span class="badge">Votre voix</span></h3>
+      <p class="sans" style="margin:0;font-size:14px;color:var(--mute)">Votre voix enregistrée dans ElevenLabs : homme français de 56 ans, avec une pointe d’accent créole.</p>
+      <audio controls preload="none" src="assets/audio/voix-homme-56.mp3"></audio>
+      <div class="row2"><label><input type="radio" name="voice" value="homme56" checked> Choisir</label></div>
+    </div>
+    <div class="card pick" data-kind="voice" data-id="aude">
+      <h3>Aude</h3>
+      <p class="sans" style="margin:0;font-size:14px;color:var(--mute)">Femme, chaleureuse et rassurante, ton pédagogique.</p>
+      <audio controls preload="none" src="assets/audio/voix-aude.mp3"></audio>
+      <div class="row2"><label><input type="radio" name="voice" value="aude"> Choisir</label></div>
+    </div>
+    <div class="card pick" data-kind="voice" data-id="thomas">
+      <h3>Thomas</h3>
+      <p class="sans" style="margin:0;font-size:14px;color:var(--mute)">Homme (≈ 30 ans), chaleureux et naturel.</p>
+      <audio controls preload="none" src="assets/audio/voix-thomas.mp3"></audio>
+      <div class="row2"><label><input type="radio" name="voice" value="thomas"> Choisir</label></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:34px">2 · Avatar présentateur <span class="sans" style="font-size:14px;color:var(--mute)">(acteurs stock Arcads, libres d’usage)</span></h3>
+  <div class="grid g3" id="avatars">
+    <div class="card pick" data-kind="avatar" data-id="lauren"><img src="assets/avatars/lauren.jpg" alt="Avatar Lauren, adulte, ton calme, intérieur domicile"><h3>Lauren</h3><p class="sans" style="margin:0;font-size:14px;color:var(--mute)">Adulte, calme, décor « maison ». <em>Image basse définition (aperçu).</em></p><div class="row2"><label><input type="radio" name="avatar" value="lauren"> Choisir</label></div></div>
+    <div class="card pick" data-kind="avatar" data-id="danielle"><img src="assets/avatars/danielle.jpg" alt="Avatar Danielle, senior, souriante"><h3>Danielle</h3><p class="sans" style="margin:0;font-size:14px;color:var(--mute)">Senior, souriante, balcon.</p><div class="row2"><label><input type="radio" name="avatar" value="danielle"> Choisir</label></div></div>
+    <div class="card pick" data-kind="avatar" data-id="corbin"><img src="assets/avatars/corbin.jpg" alt="Avatar Corbin, senior, calme, à la maison"><h3>Corbin</h3><p class="sans" style="margin:0;font-size:14px;color:var(--mute)">Senior, calme, assis à la maison.</p><div class="row2"><label><input type="radio" name="avatar" value="corbin"> Choisir</label></div></div>
+  </div>
+
+  <h3 style="margin-top:34px">3 · Synchronisation labiale <span class="badge off">Non générée</span></h3>
+  <div class="card">
+    <p style="margin:0 0 8px">La vidéo d’avatar qui prononce la voix choisie (lip-sync) <b>n’a pas pu être produite</b> : le compte Arcads n’a plus aucun crédit (plan gratuit, solde 0). Dès que des crédits sont ajoutés, la voix ElevenLabs retenue pilote l’avatar retenu (mode audio-driven) et la vidéo apparaît ici pour validation.</p>
+    <div class="stat">État : en attente de crédits Arcads. Aucune synchronisation simulée n’est affichée, pour ne pas fausser votre validation.</div>
+    <div class="row2"><label><input type="checkbox" id="lipok"> Je valide d’avance de lancer la synchro avec ma sélection</label></div>
+  </div>
+
+  <h3 style="margin-top:34px">4 · Votre décision</h3>
+  <div class="card">
+    <p class="sans" id="summary" style="margin-top:0"></p>
+    <textarea id="comment" placeholder="Remarques (accent, rythme, ton, avatar…)"></textarea>
+    <div class="row2"><button class="btn" id="copy">Copier ma validation</button><span class="sans" id="copied" style="align-self:center;color:var(--ok)"></span></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Présentation générée à partir du dossier « Maintenir maman à domicile sans laisser la famille seule face au financement ». Montants et droits : hypothèses du dossier, à confirmer auprès des organismes concernés. Voix : ElevenLabs. Avatars : catalogue Arcads.</div></footer>
+
+<script>
+(function(){
+  var t=document.getElementById('thumbs');
+  for(var i=1;i<=9;i++){var a=document.createElement('a');a.href='assets/slides/s-'+i+'.jpg';a.target='_blank';a.rel='noopener';a.innerHTML='<img loading="lazy" alt="Page '+i+' du dossier" src="assets/slides/s-'+i+'.jpg">';t.appendChild(a)}
+  var K='mamandomicile.validation',st={voice:'homme56',avatar:'corbin',comment:'',lip:false};
+  try{Object.assign(st,JSON.parse(localStorage.getItem(K)||'{}'))}catch(e){}
+  var names={homme56:'Homme français 56 ans (votre voix)',aude:'Aude',thomas:'Thomas',lauren:'Lauren',danielle:'Danielle',corbin:'Corbin'};
+  function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
+  function render(){
+    document.querySelectorAll('input[name=voice]').forEach(function(r){r.checked=r.value===st.voice});
+    document.querySelectorAll('input[name=avatar]').forEach(function(r){r.checked=r.value===st.avatar});
+    document.querySelectorAll('.pick').forEach(function(c){c.classList.toggle('sel',st[c.dataset.kind]===c.dataset.id)});
+    document.getElementById('comment').value=st.comment;
+    document.getElementById('lipok').checked=st.lip;
+    document.getElementById('summary').innerHTML='Voix retenue : <b>'+names[st.voice]+'</b> · Avatar retenu : <b>'+names[st.avatar]+'</b> · Synchro labiale : <b>'+(st.lip?'à lancer avec cette sélection':'non validée (non générée)')+'</b>';
+  }
+  document.addEventListener('change',function(e){
+    var n=e.target.name;
+    if(n==='voice'||n==='avatar'){st[n]=e.target.value}
+    if(e.target.id==='lipok'){st.lip=e.target.checked}
+    save();render();
+  });
+  document.getElementById('comment').addEventListener('input',function(e){st.comment=e.target.value;save()});
+  document.querySelectorAll('audio').forEach(function(a){a.addEventListener('play',function(){document.querySelectorAll('audio').forEach(function(o){if(o!==a)o.pause()})})});
+  document.getElementById('copy').addEventListener('click',function(){
+    var txt='Validation : voix='+names[st.voice]+' ; avatar='+names[st.avatar]+' ; synchro='+(st.lip?'à lancer':'non validée')+(st.comment?' ; remarques : '+st.comment:'');
+    var done=function(){document.getElementById('copied').textContent='Copié.'};
+    if(navigator.clipboard){navigator.clipboard.writeText(txt).then(done,function(){window.prompt('Copiez :',txt)})}else{window.prompt('Copiez :',txt)}
+  });
+  render();
+})();
+</script>
+</body>
+</html>
