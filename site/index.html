@@ -184,11 +184,12 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
     <div class="card pick" data-kind="avatar" data-id="corbin"><img src="assets/avatars/corbin.jpg" alt="Avatar Corbin, senior, calme, à la maison"><h3>Corbin</h3><p class="sans" style="margin:0;font-size:14px;color:var(--mute)">Senior, calme, assis à la maison.</p><div class="row2"><label><input type="radio" name="avatar" value="corbin"> Choisir</label></div></div>
   </div>
 
-  <h3 style="margin-top:34px">3 · Synchronisation labiale <span class="badge off">Non générée</span></h3>
+  <h3 style="margin-top:34px">3 · Synchronisation labiale <span class="badge">Générée</span></h3>
   <div class="card">
-    <p style="margin:0 0 8px">La vidéo d’avatar qui prononce la voix choisie (lip-sync) <b>n’a pas pu être produite</b> : le compte Arcads n’a plus aucun crédit (plan gratuit, solde 0). Dès que des crédits sont ajoutés, la voix ElevenLabs retenue pilote l’avatar retenu (mode audio-driven) et la vidéo apparaît ici pour validation.</p>
-    <div class="stat">État : en attente de crédits Arcads. Aucune synchronisation simulée n’est affichée, pour ne pas fausser votre validation.</div>
-    <div class="row2"><label><input type="checkbox" id="lipok"> Je valide d’avance de lancer la synchro avec ma sélection</label></div>
+    <p style="margin:0 0 12px">Avatar <b>Corbin</b> animé avec <b>votre voix « Homme français 56 ans »</b> (ElevenLabs, modèle OmniHuman 1.5). Durée : 20 s.</p>
+    <video controls playsinline preload="metadata" poster="assets/video/lipsync-corbin.jpg" src="assets/video/lipsync-corbin.mp4" style="width:100%;max-width:360px;border-radius:10px;background:#000;display:block"></video>
+    <div class="stat">À juger : la bouche suit la voix, mais l’avatar baisse le regard et tend la main vers la table en cours de phrase. Si cela vous gêne, je relance avec une consigne plus statique (regard caméra, mains immobiles).</div>
+    <div class="row2"><label><input type="checkbox" id="lipok"> Je valide cette synchronisation labiale</label></div>
   </div>
 
   <h3 style="margin-top:34px">4 · Votre décision</h3>
@@ -215,7 +216,7 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
     document.querySelectorAll('.pick').forEach(function(c){c.classList.toggle('sel',st[c.dataset.kind]===c.dataset.id)});
     document.getElementById('comment').value=st.comment;
     document.getElementById('lipok').checked=st.lip;
-    document.getElementById('summary').innerHTML='Voix retenue : <b>'+names[st.voice]+'</b> · Avatar retenu : <b>'+names[st.avatar]+'</b> · Synchro labiale : <b>'+(st.lip?'à lancer avec cette sélection':'non validée (non générée)')+'</b>';
+    document.getElementById('summary').innerHTML='Voix retenue : <b>'+names[st.voice]+'</b> · Avatar retenu : <b>'+names[st.avatar]+'</b> · Synchro labiale : <b>'+(st.lip?'validée':'à valider (vidéo ci-dessus)')+'</b>';
   }
   document.addEventListener('change',function(e){
     var n=e.target.name;
@@ -226,7 +227,7 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
   document.getElementById('comment').addEventListener('input',function(e){st.comment=e.target.value;save()});
   document.querySelectorAll('audio').forEach(function(a){a.addEventListener('play',function(){document.querySelectorAll('audio').forEach(function(o){if(o!==a)o.pause()})})});
   document.getElementById('copy').addEventListener('click',function(){
-    var txt='Validation : voix='+names[st.voice]+' ; avatar='+names[st.avatar]+' ; synchro='+(st.lip?'à lancer':'non validée')+(st.comment?' ; remarques : '+st.comment:'');
+    var txt='Validation : voix='+names[st.voice]+' ; avatar='+names[st.avatar]+' ; synchro='+(st.lip?'validée':'non validée')+(st.comment?' ; remarques : '+st.comment:'');
     var done=function(){document.getElementById('copied').textContent='Copié.'};
     if(navigator.clipboard){navigator.clipboard.writeText(txt).then(done,function(){window.prompt('Copiez :',txt)})}else{window.prompt('Copiez :',txt)}
   });
