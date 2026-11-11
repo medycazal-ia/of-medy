@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Dossier maman à domicile</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Présentation du dossier : organisation familiale, professionnelle et financière pour sécuriser le maintien à domicile après AVC.">
@@ -57,9 +58,18 @@ h2{font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.12;margin:0 0 22
 textarea{width:100%;min-height:80px;border-radius:8px;border:1px solid var(--line);padding:10px;font:15px system-ui,sans-serif;background:var(--bg);color:var(--ink)}
 .script{background:var(--bg);border-left:4px solid var(--blue);padding:14px 18px;border-radius:6px;margin:0 0 22px}
 .stat{color:var(--ink);font:14px system-ui,sans-serif;margin:14px 0 0;padding:12px 14px;border-radius:8px;background:var(--bg);border:1px dashed var(--warn)}
+.tbl{overflow-x:auto;margin:14px 0}
+.tbl table{border-collapse:collapse;width:100%;min-width:600px;font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.tbl th,.tbl td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl td.n,.tbl th.n{text-align:right;white-space:nowrap}
+.tbl tr.tot td{font-weight:700;background:color-mix(in srgb,var(--card) 70%,transparent)}
+.tbl tr.fin td{font-weight:700;background:var(--sky);color:#1f1f1d}
+.opt.win{border:2px solid var(--ok)}
+.opt p{margin:6px 0}
 footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
 </style>
-<nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#droits">Droits</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
+<nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#portage">Portage</a><a href="#droits">Droits</a><a href="#cdd">CDD transitoire</a><a href="#tresorerie">Trésorerie</a><a href="#contacts">Contacts</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
 
 <header class="hero">
   <div class="wrap">
@@ -85,14 +95,20 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
   <h2>Un employeur unique coordonne trois contrats complémentaires</h2>
   <div class="flow">
     <div class="src">
-      <div><span>Apprenti principal<small>prépare le TP ADVF</small></span><b>44 h/sem.</b></div>
-      <div><span>Proche tuteur<small>salarié Cesu, titulaire du TP ADVF</small></span><b>4 h/sem.</b></div>
-      <div><span>Sœur relais<small>relèves et absences</small></span><b>9 h/sem.</b></div>
+      <div><span>Apprenti principal<small>prépare le TP ADVF · 2 227,46 € nets/mois</small></span><b>44 h/sem.</b></div>
+      <div><span>Proche tuteur<small>salarié Cesu, titulaire du TP ADVF · 182,52 € nets/mois</small></span><b>4 h/sem.</b></div>
+      <div><span>Sœur relais<small>relèves et absences · 410,67 € nets/mois</small></span><b>9 h/sem.</b></div>
     </div>
     <div class="arrow">→</div>
     <div class="hub"><div style="font-size:22px">Employeur unique</div><p style="margin:8px 0 0">57 h/semaine · environ 247 h/mois</p></div>
   </div>
   <p class="note">Le montage répartit les rôles sans multiplier les interlocuteurs. Les horaires et contrats restent à vérifier.</p>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card"><h3>Pourquoi un seul employeur</h3><p>Un contrat d’apprentissage ne peut pas être scindé entre deux employeurs, et le crédit d’impôt est exclu pour un proche qui paierait des heures chez un parent percevant l’APA. La bénéficiaire reste donc l’employeur unique déclaré sur le Cesu pour les 3 contrats.</p></div>
+    <div class="card"><h3>Dérogation d’âge</h3><p>Contrat d’apprentissage de 12 mois, au-delà de 29 ans (article L. 6222-2 du Code du travail), justifié par un projet de création d’entreprise dans les services à la personne. Rémunération à 100 % du SMIC 2026 (1 867,02 € brut), plus 9 h supplémentaires par semaine : plafond moyen de 44 h.</p></div>
+    <div class="card"><h3>Un tuteur salarié, obligatoirement</h3><p>Un bénévole familial ne peut pas être maître d’apprentissage. Le proche titulaire du TP ADVF (au moins 1 an d’expérience) est embauché en CDI Cesu à 17,33 h/mois, à 13,50 € brut/h : coût employeur 240,97 €/mois.</p></div>
+    <div class="card"><h3>Cumul d’emplois de la sœur</h3><p>Déjà salariée à 35 h ailleurs, elle cumule 9 h/semaine en Cesu (39 h/mois à 13,50 € brut/h), soit 44 h en moyenne tous employeurs confondus, sous réserve d’absence de clause d’exclusivité. Coût employeur : 542,30 €/mois.</p></div>
+  </div>
   <h3 style="margin:34px 0 14px;font-weight:400;font-size:24px">Aide, emploi, formation : transformer l’aide familiale en emploi déclaré et formateur</h3>
   <div class="grid g3">
     <div class="card"><h3>Un parcours qualifiant</h3><p>Le contrat principal prépare au Titre Professionnel Assistant de Vie aux Familles et s’inscrit dans un projet de création d’activité.</p></div>
@@ -120,18 +136,122 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
     <div class="row"><span class="lab">GIR 1</span><div class="track"><div class="bar" style="width:72.6%;background:#3e9a46">491,31 € / mois</div></div></div>
   </div>
   <p>Soit 8 121,50 € par an en GIR 2 et 5 895,68 € par an en GIR 1. Le classement GIR 1 réduit davantage le reste à charge mensuel.</p>
+  <h3 style="margin:30px 0 4px;font-weight:400;font-size:24px">Le calcul mensuel, poste par poste</h3>
+  <p class="note" style="margin-top:0">Base SMIC 2026 : 1 867,02 € brut/mois (12,31 €/h). Retraite de la bénéficiaire : 1 200 €/mois (ticket modérateur APA de 6,8 %). Plafonds APA 2026 : 1 682,30 € en GIR 2 (APA nette 1 567,90 €) et 2 080,33 € en GIR 1 (APA nette 1 938,87 €).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Poste mensuel (1re année d’apprentissage)</th><th class="n">GIR 2</th><th class="n">GIR 1</th></tr></thead>
+    <tbody>
+      <tr><td>Contrat 1 : apprenti 44 h/sem. (brut 2 480,47 € + ~3 % de charges)</td><td class="n">2 554,88 €</td><td class="n">2 554,88 €</td></tr>
+      <tr><td>Contrat 2 : proche tuteur 4 h/sem.</td><td class="n">240,97 €</td><td class="n">240,97 €</td></tr>
+      <tr><td>Contrat 3 : sœur relais 9 h/sem.</td><td class="n">542,30 €</td><td class="n">542,30 €</td></tr>
+      <tr class="tot"><td>Coût employeur global (57 h/sem.)</td><td class="n">3 338,15 €</td><td class="n">3 338,15 €</td></tr>
+      <tr><td>Moins aide de l’État à l’embauche (5 000 € / 12 mois)</td><td class="n">− 416,67 €</td><td class="n">− 416,67 €</td></tr>
+      <tr><td>Moins APA nette versée par le Département</td><td class="n">− 1 567,90 €</td><td class="n">− 1 938,87 €</td></tr>
+      <tr class="tot"><td>Reste à avancer chaque mois (avant crédit d’impôt)</td><td class="n">1 353,58 €<br><small>16 243,00 €/an</small></td><td class="n">982,61 €<br><small>11 791,36 €/an</small></td></tr>
+      <tr><td>Moins crédit d’impôt 50 % (viré par la DGFiP même si non imposable)</td><td class="n">− 676,79 €</td><td class="n">− 491,31 €</td></tr>
+      <tr class="fin"><td>Reste à charge final net réel</td><td class="n">676,79 €/mois<br><small>8 121,50 €/an</small></td><td class="n">491,31 €/mois<br><small>5 895,68 €/an</small></td></tr>
+    </tbody></table></div>
+  <h3 style="margin:30px 0 4px;font-weight:400;font-size:24px">Régime social et fiscal de chaque contrat</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Contrat</th><th>Exonération patronale APA / CMI</th><th>Exonération salariale</th><th>Impôt sur le revenu du salarié</th><th>Crédit d’impôt 50 % (employeur)</th></tr></thead>
+    <tbody>
+      <tr><td>1. Apprenti (44 h)</td><td>Oui, Sécu totale, reste ~3 % de charges</td><td>Oui, 0 cotisation jusqu’à 50 % du SMIC + allègement heures sup.</td><td>Exonéré (salaire et heures sup. non imposables)</td><td>Oui, plafond 20 000 €/an via CMI</td></tr>
+      <tr><td>2. Proche tuteur (4 h)</td><td>Oui, Sécu totale, reste ~3 %</td><td>Non, cotisations classiques ~22 %</td><td>Imposable, barème classique</td><td>Oui, plafond 20 000 €/an</td></tr>
+      <tr><td>3. Sœur relais (9 h)</td><td>Oui, Sécu totale, reste ~3 %</td><td>Non, cotisations classiques ~22 %</td><td>Imposable, barème classique</td><td>Oui, plafond 20 000 €/an</td></tr>
+    </tbody></table></div>
   <p class="note">Hypothèses du dossier. Ces montants ne constituent pas une garantie.</p>
+</div></section>
+
+<section id="portage"><div class="wrap">
+  <p class="kicker">Comparatif des modes de portage</p>
+  <h2>L’emploi direct Cesu est la seule option qui garde les 44 h et toutes les aides</h2>
+  <div class="grid g3">
+    <div class="card opt win"><h3>1 · Emploi direct Cesu <span class="badge">Retenue</span></h3>
+      <p><b>9 h sup. intégrées</b> : oui, salaire net 2 227,46 €/mois.</p>
+      <p><b>APA et exonérations</b> : maintenues à 100 %.</p>
+      <p><b>Crédit d’impôt 50 %</b> : oui, par virement fiscal en juillet N+1.</p>
+      <p><b>Tutorat et sœur</b> : contrats de 4 h et 9 h sur le même Cesu.</p></div>
+    <div class="card opt"><h3>2 · Entité existante</h3>
+      <p><b>9 h sup. intégrées</b> : non, plafonné à 35 h, salaire net 1 672,47 € (−555 €).</p>
+      <p><b>APA</b> : versée à l’organisme, heures réduites (tarif ~26 €/h).</p>
+      <p><b>Crédit d’impôt</b> : oui, déduit en temps réel (avance immédiate Urssaf).</p>
+      <p><b>Verdict</b> : repli uniquement si la trésorerie est impossible.</p></div>
+    <div class="card opt"><h3>3 · Tiers ou association familiale</h3>
+      <p><b>9 h sup. intégrées</b> : impossible, pas d’agrément pour un cercle familial.</p>
+      <p><b>APA</b> : 0 € si l’employeur est un proche tiers.</p>
+      <p><b>Crédit d’impôt</b> : 0 € (interdit si maman perçoit l’APA).</p>
+      <p><b>Verdict</b> : à écarter. Agrément de 6 à 18 mois, refus quasi certain.</p></div>
+  </div>
+  <p class="note">Source : section 3 du dossier V4.</p>
 </div></section>
 
 <section id="droits"><div class="wrap">
   <p class="kicker">Au-delà du salaire</p>
   <h2>Les contrats donnent aussi des droits sociaux aux proches salariés</h2>
   <div class="grid g3">
-    <div class="card"><h3>Retraite</h3><p>Le dossier présente une validation possible de quatre trimestres de retraite par an pour l’apprenti principal.</p></div>
-    <div class="card"><h3>Protection</h3><p>Les salariés bénéficient d’une couverture liée au travail, à la maladie et à la prévoyance selon le cadre applicable.</p></div>
+    <div class="card"><h3>Retraite</h3><p>Le dossier présente une validation possible de quatre trimestres de retraite par an (base et Agirc-Arrco) pour l’apprenti principal, sur 29 765,64 € brut/an.</p></div>
+    <div class="card"><h3>Protection</h3><p>Les salariés bénéficient d’une couverture liée au travail, à la maladie et à la prévoyance selon le cadre applicable. L’apprenti cotise aussi à l’assurance chômage sur son salaire brut réel (2 480,47 €/mois).</p></div>
     <div class="card"><h3>Fin de contrat</h3><p>En cas de décès de l’employeur, les contrats prennent fin selon la procédure prévue et peuvent ouvrir des droits de fin de contrat.</p></div>
   </div>
+  <div class="card" style="margin-top:16px"><h3>En cas de décès de l’employeur : qui signe quoi</h3>
+    <p>Le décès rompt de plein droit les contrats à sa date. Il ouvre droit aux indemnités de préavis, de licenciement (à partir de 8 mois d’ancienneté), de congés payés et aux allocations chômage France Travail.</p>
+    <p>Pour éviter un conflit d’intérêts sur votre propre solde de tout compte, faites signer votre lettre de rupture, votre certificat de travail et votre attestation France Travail par un autre héritier (votre sœur ou le proche tuteur) ou par le notaire chargé de la succession. Cet acte conservatoire urgent est autorisé avant même l’acceptation de la succession.</p></div>
   <p class="note">Les droits exacts dépendent du cadre applicable et doivent être vérifiés.</p>
+</div></section>
+
+<section id="cdd"><div class="wrap">
+  <p class="kicker">Phase transitoire</p>
+  <h2>Démarrer par un CDD unique de 44 h avant l’apprentissage</h2>
+  <p>Dès la notification écrite de l’APA d’urgence (1 040,17 €/mois), une seule personne peut être embauchée en CDD Cesu à 44 h/semaine, pour accroissement temporaire d’activité lié au retour d’hospitalisation après AVC. Le temps de finaliser l’accord OPCO et les contrats définitifs.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Poste mensuel (CDD, 1 salarié, 44 h/sem.)</th><th class="n">APA d’urgence<br>1 040,17 €</th><th class="n">APA GIR 2<br>1 567,90 €</th><th class="n">APA GIR 1<br>1 938,87 €</th></tr></thead>
+    <tbody>
+      <tr><td>Salaire net perçu par l’aidant</td><td class="n">2 004,07 €</td><td class="n">2 004,07 €</td><td class="n">2 004,07 €</td></tr>
+      <tr><td>Coût employeur (brut 2 480,45 € + ~3 % de charges)</td><td class="n">2 554,86 €</td><td class="n">2 554,86 €</td><td class="n">2 554,86 €</td></tr>
+      <tr><td>Reste à avancer (avant crédit d’impôt)</td><td class="n">1 514,69 €</td><td class="n">986,96 €</td><td class="n">615,99 €</td></tr>
+      <tr class="fin"><td>Coût net final après crédit d’impôt 50 %</td><td class="n">757,35 €</td><td class="n">493,48 €</td><td class="n">308,00 €</td></tr>
+    </tbody></table></div>
+  <p class="note">Point de vigilance : le passage du CDD à l’apprentissage déclenche une prime de précarité de 10 % sur les salaires bruts du CDD (248,05 € brut par mois travaillé, éligible au crédit d’impôt de 50 %). La loi autorise l’entrée au CFA jusqu’à 3 mois avant la signature du contrat d’apprentissage.</p>
+</div></section>
+
+<section id="tresorerie"><div class="wrap">
+  <p class="kicker">Plan de trésorerie, décembre 2026 à juillet 2028</p>
+  <h2>La famille avance jusqu’à 22 153 € avant que le crédit d’impôt revienne</h2>
+  <p>En tant que bénéficiaire de l’APA, votre maman n’a pas accès au service « Cesu Avance immédiate ». Le Trésor public lui rembourse les 50 % de crédit d’impôt par virement fin juillet de l’année suivante, même si elle n’est pas imposable. Démarrer avant le 31 décembre 2026 permet un premier remboursement en juillet 2027 et l’acompte automatique de 60 % dès janvier 2028.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Période</th><th class="n">Salaires</th><th class="n">APA + État (GIR 2 / GIR 1)</th><th class="n">Virement fisc (GIR 2 / GIR 1)</th><th class="n">Trésorerie cumulée GIR 2</th><th class="n">GIR 1</th></tr></thead>
+    <tbody>
+      <tr><td>Déc 2026 (M1, démarrage)</td><td class="n">− 3 338,15 €</td><td class="n">0 € (décalage)</td><td class="n">0 €</td><td class="n">− 3 338,15 €</td><td class="n">− 3 338,15 €</td></tr>
+      <tr><td>Jan 2027 (M2, premières aides)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 984,57 / + 2 355,54 €</td><td class="n">0 €</td><td class="n">− 4 691,73 €</td><td class="n">− 4 320,76 €</td></tr>
+      <tr><td>Fév à juin 2027 (M3 à M7)</td><td class="n">− 3 338,15 €/m</td><td class="n">+ 1 984,57 / + 2 355,54 €/m</td><td class="n">0 €</td><td class="n">− 11 459,63 €</td><td class="n">− 9 233,81 €</td></tr>
+      <tr><td>Juil 2027 (M8, 1er virement)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 984,57 / + 2 355,54 €</td><td class="n">+ 676,79 / + 491,31 €</td><td class="n">− 12 136,42 €</td><td class="n">− 9 725,11 €</td></tr>
+      <tr><td>Août à déc 2027 (M9 à M13)</td><td class="n">− 3 338,15 €/m</td><td class="n">+ 1 984,57 / + 2 355,54 €/m</td><td class="n">0 €</td><td class="n">− 18 904,32 €</td><td class="n">− 14 638,16 €</td></tr>
+      <tr><td>Jan 2028 (M14, acompte 60 %)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 984,57 / + 2 355,54 €</td><td class="n">+ 4 872,89 / + 3 537,40 €</td><td class="n">− 15 385,01 €</td><td class="n">− 12 083,37 €</td></tr>
+      <tr class="tot"><td>Fév à juin 2028 (M15 à M19)</td><td class="n">− 3 338,15 €/m</td><td class="n">+ 1 984,57 / + 2 355,54 €/m</td><td class="n">0 €</td><td class="n">− 22 152,91 € (pic)</td><td class="n">− 16 996,42 € (pic)</td></tr>
+      <tr><td>Juil 2028 (M20, solde 40 %)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 984,57 / + 2 355,54 €</td><td class="n">+ 3 248,59 / + 2 358,26 €</td><td class="n">− 20 257,90 €</td><td class="n">− 15 620,77 €</td></tr>
+    </tbody></table></div>
+  <div class="card"><h3>Conseil patrimonial</h3><p>Formalisez les avances de trésorerie versées par les enfants sur le compte de votre maman par une reconnaissance de dette enregistrée aux impôts (ou devant notaire), afin de récupérer sereinement les remboursements fiscaux de juillet 2027, janvier 2028 et juillet 2028.</p></div>
+</div></section>
+
+<section id="contacts"><div class="wrap">
+  <p class="kicker">Annuaire des contacts, La Réunion (974) et à distance</p>
+  <h2>Qui appeler pour débloquer chaque étape</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Organisme</th><th>Rôle dans le dossier</th><th>Coordonnées</th></tr></thead>
+    <tbody>
+      <tr><td>Direction de l’Autonomie (Département 974)</td><td>Déblocage immédiat de l’APA d’urgence (art. L. 232-12 CASF : 1 040,17 €/mois)</td><td>0800 53 00 02 (gratuit) · standard 0262 90 30 30<br>dautonomie@cg974.fr (copie : accueil@cg974.fr)</td></tr>
+      <tr><td>Point-Justice / PAD de Sainte-Marie</td><td>Consultation gratuite d’avocat : relecture des 3 contrats, reconnaissance de dette</td><td>15 rue du 20 Décembre, Imm. Zatte Mangue, 97438 Sainte-Marie<br>02 62 72 10 14 · pad@ville-saintemarie.re<br>Permanences avocats : vendredis 14 h à 17 h, sur rendez-vous</td></tr>
+      <tr><td>France Services Sainte-Marie (Beauséjour)</td><td>Aide gratuite au remplissage : Cesu, APA, impôts, France Travail</td><td>225 rue du Marché, 97438 Sainte-Marie<br>02 62 80 02 40 · maisondeservices@ville-saintemarie.re</td></tr>
+      <tr><td>France Travail Sainte-Marie</td><td>Validation du projet de création d’entreprise dans le PPAE (dérogation +45 ans)</td><td>30 rue André Lardy, 97438 Sainte-Marie<br>39 49 (ou messagerie espace candidat)</td></tr>
+      <tr><td>AREFIP (CFA Réunion)</td><td>TP ADVF en apprentissage, plateau technique et examen sur l’île</td><td>06 93 01 24 47 · polerecrutement1@arefip.fr · arefip.fr</td></tr>
+      <tr><td>ATSEF (CFA Réunion)</td><td>TP ADVF au Port / La Possession, sessions régulières et SST sur place</td><td>02 62 61 05 00 (lun-ven 8 h-12 h / 13 h-16 h)<br>asspedagogie@atsef.re · atsef.re</td></tr>
+      <tr><td>Toccata Formation (CFA à distance)</td><td>TP ADVF 100 % en ligne (450 h / 12 mois), entrées permanentes</td><td>04 84 80 00 06 ou 04 11 88 01 58 (heure métropole)<br>contact@toccata-formation.com · cfa@toccata-formation.com</td></tr>
+      <tr><td>Walter Learning (CFA à distance)</td><td>TP ADVF 100 % en ligne (465 h / 12 mois), entrées permanentes</td><td>01 62 01 09 96 ou 01 76 49 09 92 (heure métropole)<br>contact@walter-learning.com</td></tr>
+    </tbody></table></div>
+  <div class="card"><h3>3 questions à poser aux CFA à distance avant signature</h3>
+    <p>1. Confirmez-vous la prise en charge à 100 % par l’OPCO, sans reste à charge malgré la minoration à distance ?</p>
+    <p>2. Disposez-vous d’un centre d’examen partenaire agréé à La Réunion pour l’épreuve pratique et le SST sur l’île ?</p>
+    <p>3. Pouvez-vous pré-remplir le Cerfa avec la dérogation d’âge (+45 ans, création d’entreprise) dès réception de notre attestation sur l’honneur ?</p></div>
 </div></section>
 
 <section id="avant"><div class="wrap">
@@ -200,7 +320,7 @@ footer{padding:28px 0 60px;font:14px system-ui,sans-serif;color:var(--mute)}
   </div>
 </div></section>
 
-<footer><div class="wrap">Présentation générée à partir du dossier « Maintenir maman à domicile sans laisser la famille seule face au financement ». Montants et droits : hypothèses du dossier, à confirmer auprès des organismes concernés. Voix : ElevenLabs. Avatars : catalogue Arcads.</div></footer>
+<footer><div class="wrap">Présentation générée à partir du dossier « Maintenir maman à domicile sans laisser la famille seule face au financement », mise à jour avec le dossier stratégique, juridique et financier V4 (novembre 2026). Montants et droits : hypothèses du dossier, à confirmer auprès des organismes concernés. Voix : ElevenLabs. Avatars : catalogue Arcads.</div></footer>
 
 <script>
 (function(){
