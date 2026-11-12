@@ -39,7 +39,7 @@ h2{font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.12;margin:0 0 22
 .arrow{font-size:30px;color:var(--mute)}
 @media(max-width:720px){.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}}
 .bars .row{display:flex;align-items:center;gap:12px;margin:10px 0;font-family:system-ui,sans-serif}
-.bars .lab{width:60px}.bars .track{flex:1;background:var(--card);border-radius:6px}
+.bars .lab{width:92px;flex:none}.bars .track{flex:1;background:var(--card);border-radius:6px}
 .bars .bar{height:34px;border-radius:6px;color:#fff;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-weight:600}
 .steps{counter-reset:s}.steps .card{border-top:3px solid var(--blue)}
 .steps .card::before{counter-increment:s;content:"0" counter(s);font:600 14px system-ui,sans-serif;color:var(--mute)}
@@ -80,16 +80,20 @@ section{scroll-margin-top:52px}
 #pv{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:19;width:min(260px,52vw);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.35);background:#000;display:none}
 #pv.on{display:block}
 body.playing section.cur .wrap{outline:3px solid var(--sky);outline-offset:8px;border-radius:6px}
+.hl{border-left:4px solid var(--warn)}
+.ok{border-left:4px solid var(--ok)}
+ol.st{margin:0;padding-left:20px}
+ol.st li{margin:6px 0}
 footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
 </style>
-<nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#portage">Portage</a><a href="#droits">Droits</a><a href="#cdd">CDD transitoire</a><a href="#tresorerie">Trésorerie</a><a href="#contacts">Contacts</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
+<nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#alternatives">Alternatives</a><a href="#portage">Portage</a><a href="#droits">Droits</a><a href="#cdd">CDD transitoire</a><a href="#tresorerie">Trésorerie</a><a href="#financement">Financer</a><a href="#contacts">Contacts</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
 
 <header class="hero">
   <div class="wrap">
     <p class="kicker" style="color:#ddd">Dossier de présentation</p>
     <h1>Maintenir maman à domicile sans laisser la famille seule face au financement</h1>
     <p>Une organisation familiale, professionnelle et financière à étudier pour sécuriser son retour et son maintien à domicile après AVC.</p>
-    <button class="btn" id="startpres" type="button">▶ Lancer la présentation (≈ 4 min, avec le son)</button> <a class="btn ghost" href="#studio">Valider avatar, voix et synchro</a>
+    <button class="btn" id="startpres" type="button">▶ Lancer la présentation (≈ 6 min, avec le son)</button> <a class="btn ghost" href="#studio">Valider avatar, voix et synchro</a>
   </div>
 </header>
 
@@ -100,6 +104,10 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
     <div class="card"><h3>Situation</h3><p>Bénéficiaire de 80 ans, hémiplégie droite après AVC, classée GIR 1 ou GIR 2.</p></div>
     <div class="card"><h3>Objectif</h3><p>Couvrir les temps d’aide au domicile, les relèves, les week-ends et les jours de CFA.</p></div>
   </div>
+  <div class="card hl" style="margin-top:16px"><h3>Deux « 57 » à ne pas confondre</h3>
+    <p><b>57 heures par semaine</b> : le besoin d’accompagnement à couvrir (environ 247 h/mois).</p>
+    <p><b>57 heures par mois</b> : l’estimation du plan d’aide APA faite par l’assistante sociale de l’hôpital. À environ 19 €/h en emploi direct, cela représente un plan d’aide de 1 083 €/mois, soit 1 009,58 € d’APA nette avec 1 200 € de retraite (ticket modérateur de 6,8 % : 73,42 €). C’est le niveau d’un classement GIR 3, bien plus bas que le classement attendu après une hémiplégie droite complète.</p>
+    <p>Le dossier présente donc <b>trois hypothèses d’APA</b> : basse (57 h/mois), GIR 2 et GIR 1. L’hypothèse basse sert de référence prudente, les deux autres sont les alternatives plus avantageuses.</p></div>
   <p class="note">Le volume présenté repose sur les hypothèses du dossier et doit être confirmé.</p>
 </div></section>
 
@@ -134,7 +142,7 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
   <p class="kicker">Les leviers de financement</p>
   <h2>Les aides publiques portent une grande partie du coût</h2>
   <div class="grid g3">
-    <div class="card"><h3>APA</h3><div class="big">1 567,90 €</div><p>nets mobilisés en hypothèse GIR 2<br><small class="sans">1 938,87 € en hypothèse GIR 1.</small></p></div>
+    <div class="card"><h3>APA</h3><div class="big">1 009,58 €</div><p>nets par mois en hypothèse basse (57 h/mois, estimation de l’hôpital)<br><small class="sans">Alternatives : 1 567,90 € en GIR 2 · 1 938,87 € en GIR 1. APA d’urgence provisoire : 1 040,17 €/mois.</small></p></div>
     <div class="card" style="background:var(--sky);color:#1f1f1d"><h3>Aide à l’embauche</h3><div class="big">5 000 €</div><p>sur la première année<br><small class="sans">416,67 € par mois dans la simulation.</small></p></div>
     <div class="card"><h3>Crédit d’impôt</h3><div class="big">50 %</div><p>du montant éligible<br><small class="sans">Plafond présenté : 20 000 € par an grâce à la CMI invalidité.</small></p></div>
   </div>
@@ -145,25 +153,28 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
   <p class="kicker">Simulation du dossier</p>
   <h2>Le reste à charge final varie selon le classement APA</h2>
   <div class="bars">
-    <div class="row"><span class="lab">GIR 2</span><div class="track"><div class="bar" style="width:100%;background:#e8622a">676,79 € / mois</div></div></div>
-    <div class="row"><span class="lab">GIR 1</span><div class="track"><div class="bar" style="width:72.6%;background:#3e9a46">491,31 € / mois</div></div></div>
+    <div class="row"><span class="lab">Hyp. basse</span><div class="track"><div class="bar" style="width:100%;background:#b3361f">1 078,57 € / mois</div></div></div>
+    <div class="row"><span class="lab">GIR 2</span><div class="track"><div class="bar" style="width:62.7%;background:#e8622a">676,79 € / mois</div></div></div>
+    <div class="row"><span class="lab">GIR 1</span><div class="track"><div class="bar" style="width:45.6%;background:#3e9a46">491,31 € / mois</div></div></div>
   </div>
-  <p>Soit 8 121,50 € par an en GIR 2 et 5 895,68 € par an en GIR 1. Le classement GIR 1 réduit davantage le reste à charge mensuel.</p>
+  <p>Pour les trois contrats (57 h/semaine) : 12 942,80 € par an dans l’hypothèse basse, 8 121,50 € en GIR 2 et 5 895,68 € en GIR 1. Plus le classement est élevé, plus le reste à charge baisse. Une réévaluation du GIR après le retour à domicile est le levier le plus puissant.</p>
   <h3 style="margin:30px 0 4px;font-weight:400;font-size:24px">Le calcul mensuel, poste par poste</h3>
-  <p class="note" style="margin-top:0">Base SMIC 2026 : 1 867,02 € brut/mois (12,31 €/h). Retraite de la bénéficiaire : 1 200 €/mois (ticket modérateur APA de 6,8 %). Plafonds APA 2026 : 1 682,30 € en GIR 2 (APA nette 1 567,90 €) et 2 080,33 € en GIR 1 (APA nette 1 938,87 €).</p>
+  <p class="note" style="margin-top:0">Base SMIC 2026 : 1 867,02 € brut/mois (12,31 €/h). Retraite de la bénéficiaire : 1 200 €/mois (ticket modérateur de 6,8 %). Hypothèse basse : plan d’aide de 57 h/mois, APA nette 1 009,58 €. Plafonds APA 2026 : 1 682,30 € en GIR 2 (APA nette 1 567,90 €) et 2 080,33 € en GIR 1 (APA nette 1 938,87 €).</p>
   <div class="tbl"><table>
-    <thead><tr><th>Poste mensuel (1re année d’apprentissage)</th><th class="n">GIR 2</th><th class="n">GIR 1</th></tr></thead>
+    <thead><tr><th>Poste mensuel (1re année d’apprentissage)</th><th class="n">Hyp. basse<br>(57 h/mois)</th><th class="n">GIR 2</th><th class="n">GIR 1</th></tr></thead>
     <tbody>
-      <tr><td>Contrat 1 : apprenti 44 h/sem. (brut 2 480,47 € + ~3 % de charges)</td><td class="n">2 554,88 €</td><td class="n">2 554,88 €</td></tr>
-      <tr><td>Contrat 2 : proche tuteur 4 h/sem.</td><td class="n">240,97 €</td><td class="n">240,97 €</td></tr>
-      <tr><td>Contrat 3 : sœur relais 9 h/sem.</td><td class="n">542,30 €</td><td class="n">542,30 €</td></tr>
-      <tr class="tot"><td>Coût employeur global (57 h/sem.)</td><td class="n">3 338,15 €</td><td class="n">3 338,15 €</td></tr>
-      <tr><td>Moins aide de l’État à l’embauche (5 000 € / 12 mois)</td><td class="n">− 416,67 €</td><td class="n">− 416,67 €</td></tr>
-      <tr><td>Moins APA nette versée par le Département</td><td class="n">− 1 567,90 €</td><td class="n">− 1 938,87 €</td></tr>
-      <tr class="tot"><td>Reste à avancer chaque mois (avant crédit d’impôt)</td><td class="n">1 353,58 €<br><small>16 243,00 €/an</small></td><td class="n">982,61 €<br><small>11 791,36 €/an</small></td></tr>
-      <tr><td>Moins crédit d’impôt 50 % (viré par la DGFiP même si non imposable)</td><td class="n">− 676,79 €</td><td class="n">− 491,31 €</td></tr>
-      <tr class="fin"><td>Reste à charge final net réel</td><td class="n">676,79 €/mois<br><small>8 121,50 €/an</small></td><td class="n">491,31 €/mois<br><small>5 895,68 €/an</small></td></tr>
+      <tr><td>Contrat 1 : apprenti 44 h/sem. (brut 2 480,47 € + ~3 % de charges)</td><td class="n">2 554,88 €</td><td class="n">2 554,88 €</td><td class="n">2 554,88 €</td></tr>
+      <tr><td>Contrat 2 : proche tuteur 4 h/sem.</td><td class="n">240,97 €</td><td class="n">240,97 €</td><td class="n">240,97 €</td></tr>
+      <tr><td>Contrat 3 : sœur relais 9 h/sem.</td><td class="n">542,30 €</td><td class="n">542,30 €</td><td class="n">542,30 €</td></tr>
+      <tr class="tot"><td>Coût employeur global (57 h/sem.)</td><td class="n">3 338,15 €</td><td class="n">3 338,15 €</td><td class="n">3 338,15 €</td></tr>
+      <tr><td>Moins aide de l’État à l’embauche (5 000 € / 12 mois)</td><td class="n">− 416,67 €</td><td class="n">− 416,67 €</td><td class="n">− 416,67 €</td></tr>
+      <tr><td>Moins APA nette versée par le Département</td><td class="n">− 1 009,58 €</td><td class="n">− 1 567,90 €</td><td class="n">− 1 938,87 €</td></tr>
+      <tr class="tot"><td>Reste à avancer chaque mois (avant crédit d’impôt)</td><td class="n">1 911,90 €<br><small>22 942,80 €/an</small></td><td class="n">1 353,58 €<br><small>16 243,00 €/an</small></td><td class="n">982,61 €<br><small>11 791,36 €/an</small></td></tr>
+      <tr><td>Moins crédit d’impôt 50 % (plafond de dépenses 20 000 €/an, donc crédit maximal 10 000 €/an)</td><td class="n">− 833,33 €<br><small>plafonné</small></td><td class="n">− 676,79 €</td><td class="n">− 491,31 €</td></tr>
+      <tr class="fin"><td>Reste à charge final net réel</td><td class="n">1 078,57 €/mois<br><small>12 942,80 €/an</small></td><td class="n">676,79 €/mois<br><small>8 121,50 €/an</small></td><td class="n">491,31 €/mois<br><small>5 895,68 €/an</small></td></tr>
+      <tr><td>Part de la retraite de 1 200 €</td><td class="n">90 %</td><td class="n">56 %</td><td class="n">41 %</td></tr>
     </tbody></table></div>
+  <p class="note">Dans l’hypothèse basse, les dépenses restant à charge (22 942,80 €/an) dépassent le plafond de 20 000 € : le crédit d’impôt est limité à 10 000 €/an. Sans ce plafond, il serait de 955,95 €/mois et le reste à charge de 955,95 €/mois, chiffre qui figurait dans l’échange. Les sommes versées au titre de l’APA et de l’aide à l’embauche sont déduites de l’assiette du crédit. À confirmer avec les impôts.</p>
   <h3 style="margin:30px 0 4px;font-weight:400;font-size:24px">Régime social et fiscal de chaque contrat</h3>
   <div class="tbl"><table>
     <thead><tr><th>Contrat</th><th>Exonération patronale APA / CMI</th><th>Exonération salariale</th><th>Impôt sur le revenu du salarié</th><th>Crédit d’impôt 50 % (employeur)</th></tr></thead>
@@ -173,6 +184,25 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
       <tr><td>3. Sœur relais (9 h)</td><td>Oui, Sécu totale, reste ~3 %</td><td>Non, cotisations classiques ~22 %</td><td>Imposable, barème classique</td><td>Oui, plafond 20 000 €/an</td></tr>
     </tbody></table></div>
   <p class="note">Hypothèses du dossier. Ces montants ne constituent pas une garantie.</p>
+</div></section>
+
+<section id="alternatives"><div class="wrap">
+  <p class="kicker">Alternatives si l’APA reste basse</p>
+  <h2>Le montage peut se faire par paliers, du socle de 39 h aux 57 h complètes</h2>
+  <p>Chaque palier garde le principe de l’employeur unique et du tuteur salarié. On monte d’un palier quand le classement GIR et la trésorerie le permettent.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Palier</th><th class="n">Heures/sem.</th><th class="n">Coût employeur</th><th class="n">Salaires nets</th><th class="n">Reste à charge<br>hyp. basse</th><th class="n">GIR 2</th><th class="n">GIR 1</th></tr></thead>
+    <tbody>
+      <tr><td>A · Socle : apprenti 35 h + tuteur 4 h</td><td class="n">39 h</td><td class="n">2 164,00 €</td><td class="n">1 672,47 € (apprenti)</td><td class="n">368,88 €</td><td class="n">89,72 €</td><td class="n">0 €*</td></tr>
+      <tr><td>B · Heures sup. : apprenti 44 h + tuteur 4 h</td><td class="n">48 h</td><td class="n">2 795,85 €</td><td class="n">2 227,46 € (apprenti)</td><td class="n">684,80 €</td><td class="n">405,64 €</td><td class="n">220,16 €</td></tr>
+      <tr class="tot"><td>C · Complet : B + sœur relais 9 h</td><td class="n">57 h</td><td class="n">3 338,15 €</td><td class="n">2 227,46 € + 410,67 € (sœur)</td><td class="n">1 078,57 €</td><td class="n">676,79 €</td><td class="n">491,31 €</td></tr>
+    </tbody></table></div>
+  <p class="note">Reste à charge mensuel net après aide à l’embauche, APA et crédit d’impôt de 50 %. *En GIR 1 au palier A, l’APA (1 938,87 €) dépasse les dépenses restantes (1 747,33 €) : elle n’est versée que dans la limite des dépenses réellement engagées. Les paliers A, GIR 2 et GIR 1 sont calculés avec la même méthode que le reste du dossier.</p>
+  <div class="grid g3">
+    <div class="card ok"><h3>Pourquoi viser le palier C</h3><p>Il garde les 9 heures supplémentaires de l’apprenti (2 227,46 € nets au lieu de 1 672,47 €), assure 57 h de présence et ajoute le revenu de la sœur. Il suppose un reste à charge supportable : à 1 078,57 €/mois, il absorbe 90 % de la retraite de 1 200 €.</p></div>
+    <div class="card"><h3>Réévaluer le GIR</h3><p>L’estimation de 57 h/mois a été faite à l’hôpital avant le retour à domicile. Dès l’installation, demander une réévaluation médico-sociale au Département avec un certificat médical détaillant l’hémiplégie droite totale. Un classement GIR 2 ou GIR 1 accorde aussi la CMI invalidité de façon automatique.</p></div>
+    <div class="card"><h3>Secours : contrat de professionnalisation</h3><p>Si l’OPCO refuse la dérogation d’âge de l’apprentissage, un contrat de professionnalisation reste ouvert sans limite d’âge aux demandeurs d’emploi de 26 ans et plus. L’aide passe à 4 000 € (2 000 € + 2 000 € à partir de 45 ans), soit environ 83 €/mois d’aide en moins. À vérifier : l’éligibilité d’un particulier employeur à ces aides.</p></div>
+  </div>
 </div></section>
 
 <section id="portage"><div class="wrap">
@@ -195,7 +225,24 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
       <p><b>Crédit d’impôt</b> : 0 € (interdit si maman perçoit l’APA).</p>
       <p><b>Verdict</b> : à écarter. Agrément de 6 à 18 mois, refus quasi certain.</p></div>
   </div>
-  <p class="note">Source : section 3 du dossier V4.</p>
+  <h3 style="margin:30px 0 4px;font-weight:400;font-size:24px">Emploi direct ou entité existante : les écarts essentiels</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Critère</th><th>Emploi direct (maman employeur Cesu)</th><th>Entité existante (prestataire)</th></tr></thead>
+    <tbody>
+      <tr><td>Salaire net de l’apprenti</td><td>2 227,46 €/mois (44 h)</td><td>1 672,47 €/mois (35 h, sans heures sup.)</td></tr>
+      <tr><td>Avance de trésorerie du crédit d’impôt</td><td>Élevée, jusqu’à juillet N+1 (pas d’avance immédiate avec l’APA)</td><td>Nulle : avance immédiate de 50 % sur la facture</td></tr>
+      <tr><td>Heures couvertes par l’APA</td><td>Environ 105 à 130 h/mois (coût réel ~16 €/h)</td><td>Environ 67 à 83 h/mois (tarif ~25 à 28 €/h)</td></tr>
+      <tr><td>Tuteur</td><td>Proche titulaire du TP ADVF salarié 4 h/sem.</td><td>Salarié diplômé de l’organisme</td></tr>
+      <tr><td>Contrat de la sœur</td><td>Sur le même compte Cesu</td><td>Contrat Cesu séparé chez maman</td></tr>
+      <tr><td>Intervention garantie chez maman</td><td>Oui, vous êtes son salarié exclusif</td><td>Non, l’organisme peut vous affecter ailleurs</td></tr>
+      <tr><td>Hospitalisation ou décès</td><td>À gérer par la famille (APA suspendue dès le 31e jour)</td><td>Géré par l’organisme</td></tr>
+    </tbody></table></div>
+  <div class="grid g3">
+    <div class="card hl"><h3>Un proche comme employeur</h3><p>À écarter. L’APA est un droit personnel : elle n’est versée que si maman est l’employeur déclaré. Un enfant n’a le crédit d’impôt pour un salarié chez sa mère que si elle renonce totalement à l’APA, et il paierait les cotisations patronales sans exonération (environ 30 à 40 % en plus).</p></div>
+    <div class="card hl"><h3>Un stage pratique chez maman</h3><p>Impossible en apprentissage. Un apprenti embauché par un proche et envoyé chez maman relève du prêt illicite de main-d’œuvre (article L. 8241-1 du Code du travail). L’OPCO annulerait le contrat et l’aide de 5 000 € serait à rembourser. Le contrat d’apprentissage ne peut pas non plus être partagé entre deux employeurs.</p></div>
+    <div class="card hl"><h3>Une association familiale</h3><p>À écarter. Intervenir en mode prestataire auprès d’un bénéficiaire de l’APA exige une autorisation de Service Autonomie à Domicile du Département (6 à 18 mois, refus quasi certain pour un cercle fermé), et le coût horaire serait plus élevé : comptabilité, assurance, médecine du travail.</p></div>
+  </div>
+  <p class="note">Source : section 3 du dossier V4 et suite de l’échange. Seule voie pour partager un apprenti entre deux employeurs : un groupement d’employeurs (type GEIQ), non étudié ici.</p>
 </div></section>
 
 <section id="droits"><div class="wrap">
@@ -217,19 +264,23 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
   <h2>Démarrer par un CDD unique de 44 h avant l’apprentissage</h2>
   <p>Dès la notification écrite de l’APA d’urgence (1 040,17 €/mois), une seule personne peut être embauchée en CDD Cesu à 44 h/semaine, pour accroissement temporaire d’activité lié au retour d’hospitalisation après AVC. Le temps de finaliser l’accord OPCO et les contrats définitifs.</p>
   <div class="tbl"><table>
-    <thead><tr><th>Poste mensuel (CDD, 1 salarié, 44 h/sem.)</th><th class="n">APA d’urgence<br>1 040,17 €</th><th class="n">APA GIR 2<br>1 567,90 €</th><th class="n">APA GIR 1<br>1 938,87 €</th></tr></thead>
+    <thead><tr><th>Poste mensuel (CDD, 1 salarié, 44 h/sem.)</th><th class="n">Hyp. basse<br>1 009,58 €</th><th class="n">APA d’urgence<br>1 040,17 €</th><th class="n">APA GIR 2<br>1 567,90 €</th><th class="n">APA GIR 1<br>1 938,87 €</th></tr></thead>
     <tbody>
-      <tr><td>Salaire net perçu par l’aidant</td><td class="n">2 004,07 €</td><td class="n">2 004,07 €</td><td class="n">2 004,07 €</td></tr>
-      <tr><td>Coût employeur (brut 2 480,45 € + ~3 % de charges)</td><td class="n">2 554,86 €</td><td class="n">2 554,86 €</td><td class="n">2 554,86 €</td></tr>
-      <tr><td>Reste à avancer (avant crédit d’impôt)</td><td class="n">1 514,69 €</td><td class="n">986,96 €</td><td class="n">615,99 €</td></tr>
-      <tr class="fin"><td>Coût net final après crédit d’impôt 50 %</td><td class="n">757,35 €</td><td class="n">493,48 €</td><td class="n">308,00 €</td></tr>
+      <tr><td>Salaire net perçu par l’aidant</td><td class="n">2 004,07 €</td><td class="n">2 004,07 €</td><td class="n">2 004,07 €</td><td class="n">2 004,07 €</td></tr>
+      <tr><td>Coût employeur (brut 2 480,45 € + ~3 % de charges)</td><td class="n">2 554,86 €</td><td class="n">2 554,86 €</td><td class="n">2 554,86 €</td><td class="n">2 554,86 €</td></tr>
+      <tr><td>Reste à avancer (avant crédit d’impôt)</td><td class="n">1 545,28 €</td><td class="n">1 514,69 €</td><td class="n">986,96 €</td><td class="n">615,99 €</td></tr>
+      <tr class="fin"><td>Coût net final après crédit d’impôt 50 %</td><td class="n">772,64 €</td><td class="n">757,35 €</td><td class="n">493,48 €</td><td class="n">308,00 €</td></tr>
     </tbody></table></div>
   <p class="note">Point de vigilance : le passage du CDD à l’apprentissage déclenche une prime de précarité de 10 % sur les salaires bruts du CDD (248,05 € brut par mois travaillé, éligible au crédit d’impôt de 50 %). La loi autorise l’entrée au CFA jusqu’à 3 mois avant la signature du contrat d’apprentissage.</p>
+  <div class="card hl"><h3>Signer l’apprentissage avant la notification de l’APA ?</h3>
+    <p><b>C’est possible, mais déconseillé.</b> Le contrat est valable sans APA et l’aide de 5 000 € démarre dès l’enregistrement par l’OPCO. En revanche, en emploi direct, les droits à l’APA s’ouvrent à la date de notification (provisoire incluse) : les semaines travaillées avant ne sont pas remboursées (1 009 à 1 939 € par mois d’APA perdus).</p>
+    <p>Tant que le compte Cesu n’est pas rattaché à l’APA ou à la CMI invalidité, maman paie en plus des cotisations patronales classiques (environ 30 à 35 %, soit 350 à 550 € par mois de surcoût).</p>
+    <p><b>Solution :</b> entrer au CFA à la date prévue (la formation peut commencer jusqu’à 3 mois avant le contrat), obtenir la notification écrite d’APA d’urgence, puis faire démarrer les contrats le jour même.</p></div>
 </div></section>
 
 <section id="tresorerie"><div class="wrap">
   <p class="kicker">Plan de trésorerie, décembre 2026 à juillet 2028</p>
-  <h2>La famille avance jusqu’à 22 153 € avant que le crédit d’impôt revienne</h2>
+  <h2>La famille avance de 17 000 € à 30 800 € selon l’APA, avant que le crédit d’impôt revienne</h2>
   <p>En tant que bénéficiaire de l’APA, votre maman n’a pas accès au service « Cesu Avance immédiate ». Le Trésor public lui rembourse les 50 % de crédit d’impôt par virement fin juillet de l’année suivante, même si elle n’est pas imposable. Démarrer avant le 31 décembre 2026 permet un premier remboursement en juillet 2027 et l’acompte automatique de 60 % dès janvier 2028.</p>
   <div class="tbl"><table>
     <thead><tr><th>Période</th><th class="n">Salaires</th><th class="n">APA + État (GIR 2 / GIR 1)</th><th class="n">Virement fisc (GIR 2 / GIR 1)</th><th class="n">Trésorerie cumulée GIR 2</th><th class="n">GIR 1</th></tr></thead>
@@ -243,7 +294,57 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
       <tr class="tot"><td>Fév à juin 2028 (M15 à M19)</td><td class="n">− 3 338,15 €/m</td><td class="n">+ 1 984,57 / + 2 355,54 €/m</td><td class="n">0 €</td><td class="n">− 22 152,91 € (pic)</td><td class="n">− 16 996,42 € (pic)</td></tr>
       <tr><td>Juil 2028 (M20, solde 40 %)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 984,57 / + 2 355,54 €</td><td class="n">+ 3 248,59 / + 2 358,26 €</td><td class="n">− 20 257,90 €</td><td class="n">− 15 620,77 €</td></tr>
     </tbody></table></div>
+  <h3 style="margin:26px 0 4px;font-weight:400;font-size:24px">Hypothèse basse (APA 1 009,58 €, 3 contrats)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Période</th><th class="n">Salaires</th><th class="n">APA + État</th><th class="n">Virement fisc</th><th class="n">Flux mensuel</th><th class="n">Trésorerie cumulée</th></tr></thead>
+    <tbody>
+      <tr><td>Déc 2026 (M1, démarrage)</td><td class="n">− 3 338,15 €</td><td class="n">0 € (décalage)</td><td class="n">0 €</td><td class="n">− 3 338,15 €</td><td class="n">− 3 338,15 €</td></tr>
+      <tr><td>Jan 2027 (M2, premières aides)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 426,25 €</td><td class="n">0 €</td><td class="n">− 1 911,90 €</td><td class="n">− 5 250,05 €</td></tr>
+      <tr><td>Fév à juin 2027 (M3 à M7)</td><td class="n">− 3 338,15 €/m</td><td class="n">+ 1 426,25 €/m</td><td class="n">0 €</td><td class="n">− 1 911,90 €/m</td><td class="n">− 14 809,55 €</td></tr>
+      <tr><td>Juil 2027 (M8, 1er virement)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 426,25 €</td><td class="n">+ 955,95 €</td><td class="n">− 955,95 €</td><td class="n">− 15 765,50 €</td></tr>
+      <tr><td>Août à déc 2027 (M9 à M13)</td><td class="n">− 3 338,15 €/m</td><td class="n">+ 1 426,25 €/m</td><td class="n">0 €</td><td class="n">− 1 911,90 €/m</td><td class="n">− 25 325,00 €</td></tr>
+      <tr><td>Jan 2028 (M14, acompte 60 % de 10 000 €)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 426,25 €</td><td class="n">+ 6 000,00 €</td><td class="n">+ 4 088,10 €</td><td class="n">− 21 236,90 €</td></tr>
+      <tr class="tot"><td>Fév à juin 2028 (M15 à M19)</td><td class="n">− 3 338,15 €/m</td><td class="n">+ 1 426,25 €/m</td><td class="n">0 €</td><td class="n">− 1 911,90 €/m</td><td class="n">− 30 796,40 € (pic)</td></tr>
+      <tr><td>Juil 2028 (M20, solde 40 %)</td><td class="n">− 3 338,15 €</td><td class="n">+ 1 426,25 €</td><td class="n">+ 4 000,00 €</td><td class="n">+ 2 088,10 €</td><td class="n">− 28 708,30 €</td></tr>
+    </tbody></table></div>
+  <p class="note">Calcul avec le plafond du crédit d’impôt (10 000 € de crédit par an). Sans plafond, l’échange donnait un acompte de 6 882,84 €, un pic de 29 913,56 € et un solde de 4 588,56 €. La trésorerie cumulée comprend le reste à charge définitif : seuls 10 955,95 € reviennent par le fisc d’ici juillet 2028. Le besoin de départ est de 5 250 € à fin janvier 2027 (4 692 € en GIR 2, 4 321 € en GIR 1).</p>
   <div class="card"><h3>Conseil patrimonial</h3><p>Formalisez les avances de trésorerie versées par les enfants sur le compte de votre maman par une reconnaissance de dette enregistrée aux impôts (ou devant notaire), afin de récupérer sereinement les remboursements fiscaux de juillet 2027, janvier 2028 et juillet 2028.</p></div>
+</div></section>
+
+<section id="financement"><div class="wrap">
+  <p class="kicker">Absorber les premiers mois</p>
+  <h2>Plusieurs aides et prêts se combinent pour tenir jusqu’au premier remboursement</h2>
+  <p>Il faut compter 5 250 € de trésorerie à fin janvier 2027 dans l’hypothèse basse (4 692 € en GIR 2, 4 321 € en GIR 1), puis environ 1 912 € par mois (1 354 € en GIR 2, 983 € en GIR 1) jusqu’aux virements du fisc. Les banques prêtent difficilement à 80 ans : les aides d’action sociale et le prêt familial passent en premier.</p>
+  <div class="grid g3">
+    <div class="card ok"><h3>1 · APA d’urgence</h3><p>1 040,17 €/mois dès la sortie d’hôpital (article L. 232-12 du CASF), avant la visite du Département. L’attestation d’urgence doit être jointe au dossier, sinon il passe en instruction classique (2 mois).</p></div>
+    <div class="card ok"><h3>2 · Aides non remboursables</h3><p>Secours exceptionnel de la CGSS Réunion et de l’Agirc-Arrco : 1 000 à 3 000 €. Fonds social ou assistance retour d’hospitalisation de la mutuelle : 500 à 1 500 €.</p></div>
+    <div class="card"><h3>3 · Prêt familial à 0 %</h3><p>Les enfants avancent la somme sur le compte employeur de maman, avec une reconnaissance de dette (formulaire Cerfa 2062, à déclarer aux impôts dès que le cumul dépasse 5 000 € dans l’année). Remboursé par les virements du fisc ou à la succession.</p></div>
+    <div class="card"><h3>4 · Microcrédit personnel</h3><p>Jusqu’à 8 000 €, remboursable sur 6 à 60 mois, pour les petits revenus exclus du crédit classique. Réseaux habilités : CCAS de Sainte-Marie, Croix-Rouge, Secours Catholique, Adie.</p></div>
+    <div class="card"><h3>5 · Prêt personnel d’un enfant</h3><p>6 000 à 10 000 € sur 18 ou 24 mois, souscrit par un enfant salarié (la sœur, ou vous après le premier salaire), reversé à maman avec reconnaissance de dette. Les crédits d’impôt de juillet 2027, janvier 2028 et juillet 2028 servent à le solder, sans pénalité de remboursement anticipé.</p></div>
+    <div class="card"><h3>6 · Prêt viager hypothécaire</h3><p>Seulement si maman est propriétaire : capital et intérêts remboursés à la vente ou à la succession, sans mensualité de son vivant. À réserver à un besoin durable.</p></div>
+  </div>
+  <h3 style="margin:30px 0 4px;font-weight:400;font-size:24px">Combiner les leviers : effet sur le reste à charge mensuel</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Combinaison</th><th class="n">Hyp. basse</th><th class="n">GIR 2</th><th class="n">GIR 1</th></tr></thead>
+    <tbody>
+      <tr><td>3 contrats (57 h/sem.)</td><td class="n">1 078,57 €</td><td class="n">676,79 €</td><td class="n">491,31 €</td></tr>
+      <tr><td>… avec un secours non remboursable de 3 000 € réparti sur 12 mois (− 250 €/mois)</td><td class="n">828,57 €</td><td class="n">426,79 €</td><td class="n">241,31 €</td></tr>
+      <tr><td>2 contrats : apprenti 44 h + tuteur (48 h/sem.)</td><td class="n">684,80 €</td><td class="n">405,64 €</td><td class="n">220,16 €</td></tr>
+      <tr class="fin"><td>… avec un secours de 3 000 € réparti sur 12 mois</td><td class="n">434,80 €</td><td class="n">155,64 €</td><td class="n">≈ 0 €</td></tr>
+    </tbody></table></div>
+  <div class="grid g2">
+    <div class="card"><h3>Plan combiné conseillé</h3>
+      <ol class="st">
+        <li>Obtenir l’APA d’urgence et la CMI invalidité avant la sortie d’hôpital.</li>
+        <li>Dès le retour à domicile, demander la réévaluation du GIR avec un certificat médical.</li>
+        <li>Déposer les demandes de secours à la CGSS, à l’Agirc-Arrco et à la mutuelle.</li>
+        <li>Faire démarrer le CDD puis les contrats le jour de la notification, avant le 31 décembre 2026 pour activer le cycle fiscal dès juillet 2027.</li>
+        <li>Financer le solde de départ par un prêt familial formalisé, un microcrédit ou un prêt d’un enfant, dimensionné sur 5 250 €.</li>
+        <li>Rembourser avec les virements du fisc : 955,95 € (juil. 2027), 6 000 € (janv. 2028) et 4 000 € (juil. 2028) en hypothèse basse.</li>
+      </ol></div>
+    <div class="card hl"><h3>Point d’attention</h3><p>Dans l’hypothèse basse, le palier C coûte 1 078,57 €/mois, soit 90 % de la retraite de 1 200 €. Il vaut mieux démarrer au palier B (684,80 €/mois) et ajouter le contrat de la sœur quand le GIR est révisé, ou prévoir une participation familiale régulière formalisée.</p></div>
+  </div>
+  <p class="note">Montants issus de l’échange avec l’assistant IA, à confirmer avec les organismes concernés. Les prêts engagent la famille : à faire relire par un professionnel ou le Point-Justice.</p>
 </div></section>
 
 <section id="contacts"><div class="wrap">
@@ -253,7 +354,8 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
     <thead><tr><th>Organisme</th><th>Rôle dans le dossier</th><th>Coordonnées</th></tr></thead>
     <tbody>
       <tr><td>Direction de l’Autonomie (Département 974)</td><td>Déblocage immédiat de l’APA d’urgence (art. L. 232-12 CASF : 1 040,17 €/mois)</td><td>0800 53 00 02 (gratuit) · standard 0262 90 30 30<br>dautonomie@cg974.fr (copie : accueil@cg974.fr)</td></tr>
-      <tr><td>Point-Justice / PAD de Sainte-Marie</td><td>Consultation gratuite d’avocat : relecture des 3 contrats, reconnaissance de dette</td><td>15 rue du 20 Décembre, Imm. Zatte Mangue, 97438 Sainte-Marie<br>02 62 72 10 14 · pad@ville-saintemarie.re<br>Permanences avocats : vendredis 14 h à 17 h, sur rendez-vous</td></tr>
+      <tr><td>Point-Justice / PAD de Sainte-Marie</td><td>Consultation gratuite d’avocat : relecture des 3 contrats, reconnaissance de dette</td><td>15 rue du 20 Décembre, Imm. Zatte Mangue, 97438 Sainte-Marie<br>02 62 72 10 14 · pad@ville-saintemarie.re<br>Permanences avocats : vendredis 14 h à 17 h, sur rendez-vous<br>Si complet : Maison de Justice de Sainte-Clotilde, 02 62 58 99 51</td></tr>
+      <tr><td>CCAS de Sainte-Marie</td><td>Aide pour monter et relancer le dossier APA, accès au suivi du dossier</td><td>Via la mairie de Sainte-Marie</td></tr>
       <tr><td>France Services Sainte-Marie (Beauséjour)</td><td>Aide gratuite au remplissage : Cesu, APA, impôts, France Travail</td><td>225 rue du Marché, 97438 Sainte-Marie<br>02 62 80 02 40 · maisondeservices@ville-saintemarie.re</td></tr>
       <tr><td>France Travail Sainte-Marie</td><td>Validation du projet de création d’entreprise dans le PPAE (dérogation +45 ans)</td><td>30 rue André Lardy, 97438 Sainte-Marie<br>39 49 (ou messagerie espace candidat)</td></tr>
       <tr><td>AREFIP (CFA Réunion)</td><td>TP ADVF en apprentissage, plateau technique et examen sur l’île</td><td>06 93 01 24 47 · polerecrutement1@arefip.fr · arefip.fr</td></tr>
@@ -265,13 +367,29 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
     <p>1. Confirmez-vous la prise en charge à 100 % par l’OPCO, sans reste à charge malgré la minoration à distance ?</p>
     <p>2. Disposez-vous d’un centre d’examen partenaire agréé à La Réunion pour l’épreuve pratique et le SST sur l’île ?</p>
     <p>3. Pouvez-vous pré-remplir le Cerfa avec la dérogation d’âge (+45 ans, création d’entreprise) dès réception de notre attestation sur l’honneur ?</p></div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3>Relancer l’APA d’urgence restée sans réponse</h3>
+      <ol class="st">
+        <li>Appeler le 0800 53 00 02 ou le 0262 90 30 30 (lun-ven 8 h à 16 h 30), service Aide Sociale aux Adultes, avec le numéro de Sécurité sociale et la date d’envoi du dossier.</li>
+        <li>Écrire à dautonomie@cg974.fr (copie accueil@cg974.fr), objet : « URGENCE SORTIE D’HOSPITALISATION AVC, suivi demande APA d’urgence (article L. 232-12 du CASF), [nom, prénom, date de naissance] ».</li>
+        <li>Vérifier que l’assistante sociale a joint l’attestation d’urgence au dossier.</li>
+        <li>Sans réponse sous 48 à 72 h : lettre recommandée avec AR au Président du Conseil départemental, Direction de l’Autonomie, 2 rue de la Source, 97488 Saint-Denis Cedex.</li>
+      </ol></div>
+    <div class="card"><h3>CFA à distance : vérifications avant de signer</h3>
+      <ol class="st">
+        <li>Depuis le 1er juillet 2025, la prise en charge de l’OPCO est minorée de 20 % si plus de 80 % de la formation est à distance : exiger par écrit 0 € de reste à charge.</li>
+        <li>L’examen final et le secourisme (SST) se passent en présentiel : confirmer un centre agréé à La Réunion.</li>
+        <li>Les heures de cours en ligne comptent dans le temps de travail : la sœur ou le tuteur prend le relais auprès de maman. Décalage horaire : +2 h en été, +3 h en hiver avec la métropole.</li>
+        <li>ATSEF (La Possession) annonce une session démarrant mi-novembre 2026.</li>
+      </ol></div>
+  </div>
 </div></section>
 
 <section id="avant"><div class="wrap">
   <p class="kicker">Avant de s’engager</p>
   <h2>La priorité est de sécuriser le dossier avant toute signature</h2>
   <div class="grid g2 steps" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-    <div class="card"><h3>Notification APA</h3><p>Obtenir la notification écrite, provisoire ou définitive, avant de fixer le début des contrats.</p></div>
+    <div class="card"><h3>Notification APA</h3><p>Obtenir la notification écrite, provisoire ou définitive, avant de fixer le début des contrats. Demander ensuite la réévaluation du GIR avec un certificat médical.</p></div>
     <div class="card"><h3>Éligibilité</h3><p>Faire confirmer la dérogation d’âge et le parcours par le CFA et l’OPCO.</p></div>
     <div class="card"><h3>Relecture</h3><p>Faire relire les contrats par un professionnel compétent ou un Point-Justice.</p></div>
     <div class="card"><h3>Vérification</h3><p>Vérifier les calculs, les plafonds et les règles Cesu avec les organismes concernés.</p></div>
@@ -333,7 +451,7 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
   </div>
 </div></section>
 
-<footer><div class="wrap">Présentation générée à partir du dossier « Maintenir maman à domicile sans laisser la famille seule face au financement », mise à jour avec le dossier stratégique, juridique et financier V4 (novembre 2026). Montants et droits : hypothèses du dossier, à confirmer auprès des organismes concernés. Voix : ElevenLabs. Avatars : catalogue Arcads.</div></footer>
+<footer><div class="wrap">Présentation générée à partir du dossier « Maintenir maman à domicile sans laisser la famille seule face au financement », mise à jour avec le dossier stratégique, juridique et financier V4 (novembre 2026) et la suite de l’échange : hypothèse basse d’APA à 57 h/mois, paliers de montage et solutions de financement. Montants et droits : hypothèses du dossier, à confirmer auprès des organismes concernés. Voix : ElevenLabs. Avatars : catalogue Arcads.</div></footer>
 
 <video id="pv" playsinline preload="none" poster="assets/video/lipsync-corbin.jpg" src="assets/video/lipsync-corbin.mp4"></video>
 <div id="pbar" role="region" aria-label="Lecture de la présentation"><div class="r">
@@ -381,10 +499,12 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
     {id:'montage',t:'Le montage',a:'assets/audio/nar-montage.mp3'},
     {id:'aides',t:'Le financement',a:'assets/audio/nar-aides.mp3'},
     {id:'simulation',t:'La simulation',a:'assets/audio/nar-simulation.mp3'},
+    {id:'alternatives',t:'Les alternatives par paliers',a:'assets/audio/nar-alternatives.mp3'},
     {id:'portage',t:'Le portage',a:'assets/audio/nar-portage.mp3'},
     {id:'droits',t:'Les droits',a:'assets/audio/nar-droits.mp3'},
     {id:'cdd',t:'Le CDD transitoire',a:'assets/audio/nar-cdd.mp3'},
     {id:'tresorerie',t:'La trésorerie',a:'assets/audio/nar-tresorerie.mp3'},
+    {id:'financement',t:'Financer les premiers mois',a:'assets/audio/nar-financement.mp3'},
     {id:'contacts',t:'Les contacts',a:'assets/audio/nar-contacts.mp3'},
     {id:'avant',t:'Avant de signer',a:'assets/audio/nar-avant.mp3'}
   ];
