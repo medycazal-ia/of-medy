@@ -80,13 +80,15 @@ section{scroll-margin-top:52px}
 #pv{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:19;width:min(260px,52vw);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.35);background:#000;display:none}
 #pv.on{display:block}
 body.playing section.cur .wrap{outline:3px solid var(--sky);outline-offset:8px;border-radius:6px}
+.stk{display:flex;height:34px;border-radius:6px;overflow:hidden}
+.stk i{display:flex;align-items:center;justify-content:center;font:600 12px system-ui,sans-serif;color:#fff;font-style:normal;min-width:0;overflow:hidden}
 .hl{border-left:4px solid var(--warn)}
 .ok{border-left:4px solid var(--ok)}
 ol.st{margin:0;padding-left:20px}
 ol.st li{margin:6px 0}
 footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
 </style>
-<nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#alternatives">Alternatives</a><a href="#portage">Portage</a><a href="#droits">Droits</a><a href="#cdd">CDD transitoire</a><a href="#tresorerie">Trésorerie</a><a href="#financement">Financer</a><a href="#contacts">Contacts</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
+<nav><div class="wrap"><a href="#besoin">Le besoin</a><a href="#montage">Le montage</a><a href="#aides">Financement</a><a href="#simulation">Simulation</a><a href="#alternatives">Alternatives</a><a href="#gain">Gain par €</a><a href="#portage">Portage</a><a href="#droits">Droits</a><a href="#cdd">CDD transitoire</a><a href="#tresorerie">Trésorerie</a><a href="#financement">Financer</a><a href="#contacts">Contacts</a><a href="#avant">Avant de signer</a><a href="#studio"><b>Studio de validation</b></a></div></nav>
 
 <header class="hero">
   <div class="wrap">
@@ -203,6 +205,39 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
     <div class="card"><h3>Réévaluer le GIR</h3><p>L’estimation de 57 h/mois a été faite à l’hôpital avant le retour à domicile. Dès l’installation, demander une réévaluation médico-sociale au Département avec un certificat médical détaillant l’hémiplégie droite totale. Un classement GIR 2 ou GIR 1 accorde aussi la CMI invalidité de façon automatique.</p></div>
     <div class="card"><h3>Secours : contrat de professionnalisation</h3><p>Si l’OPCO refuse la dérogation d’âge de l’apprentissage, un contrat de professionnalisation reste ouvert sans limite d’âge aux demandeurs d’emploi de 26 ans et plus. L’aide passe à 4 000 € (2 000 € + 2 000 € à partir de 45 ans), soit environ 83 €/mois d’aide en moins. À vérifier : l’éligibilité d’un particulier employeur à ces aides.</p></div>
   </div>
+</div></section>
+
+<section id="gain"><div class="wrap">
+  <p class="kicker">Gain par euro dépensé</p>
+  <h2>Chaque euro pris sur la retraite de maman en mobilise de 2 à 6 en aides, avec les 3 contrats</h2>
+  <p>La retraite de maman (1 200 €/mois) ne finance que le reste à charge final. Le tableau compare ce qu’elle débourse à tout ce que le montage mobilise : APA, aide à l’embauche, crédit d’impôt de 50 % et présence payée.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Scénario</th><th class="n">Reste à charge /mois</th><th class="n">Part de la retraite</th><th class="n">Reste de la retraite</th><th class="n">Aides publiques par € dépensé</th><th class="n">Présence payée par € dépensé</th><th class="n">Revenus nets famille par € dépensé</th><th class="n">Coût net par heure de présence</th></tr></thead>
+    <tbody>
+      <tr class="tot"><td>3 contrats (57 h) · Hyp. basse</td><td class="n">1 078,57 €</td><td class="n">90 %</td><td class="n">121,43 €</td><td class="n">2,09 €</td><td class="n">3,09 €</td><td class="n">2,62 €</td><td class="n">4,37 €</td></tr>
+      <tr class="tot"><td>3 contrats (57 h) · GIR 2</td><td class="n">676,79 €</td><td class="n">56 %</td><td class="n">523,21 €</td><td class="n">3,93 €</td><td class="n">4,93 €</td><td class="n">4,17 €</td><td class="n">2,74 €</td></tr>
+      <tr class="tot"><td>3 contrats (57 h) · GIR 1</td><td class="n">491,31 €</td><td class="n">41 %</td><td class="n">708,69 €</td><td class="n">5,79 €</td><td class="n">6,79 €</td><td class="n">5,74 €</td><td class="n">1,99 €</td></tr>
+      <tr><td>Apprenti 44 h + tuteur (48 h) · Hyp. basse</td><td class="n">684,80 €</td><td class="n">57 %</td><td class="n">515,20 €</td><td class="n">3,08 €</td><td class="n">4,08 €</td><td class="n">3,52 €</td><td class="n">3,29 €</td></tr>
+      <tr><td>Apprenti 44 h + tuteur (48 h) · GIR 2</td><td class="n">405,64 €</td><td class="n">34 %</td><td class="n">794,36 €</td><td class="n">5,89 €</td><td class="n">6,89 €</td><td class="n">5,94 €</td><td class="n">1,95 €</td></tr>
+      <tr><td>Apprenti 44 h + tuteur (48 h) · GIR 1</td><td class="n">220,16 €</td><td class="n">18 %</td><td class="n">979,84 €</td><td class="n">11,70 €</td><td class="n">12,70 €</td><td class="n">10,95 €</td><td class="n">1,06 €</td></tr>
+      <tr><td>Apprenti 35 h + tuteur (39 h) · Hyp. basse</td><td class="n">368,88 €</td><td class="n">31 %</td><td class="n">831,12 €</td><td class="n">4,87 €</td><td class="n">5,87 €</td><td class="n">5,03 €</td><td class="n">2,18 €</td></tr>
+      <tr><td>Apprenti 35 h + tuteur (39 h) · GIR 2</td><td class="n">89,72 €</td><td class="n">7 %</td><td class="n">1 110,28 €</td><td class="n">23,12 €</td><td class="n">24,12 €</td><td class="n">20,68 €</td><td class="n">0,53 €</td></tr>
+      <tr><td>Apprenti 35 h + tuteur (39 h) · GIR 1</td><td class="n">0,00 €</td><td class="n">0 %</td><td class="n">1 200,00 €</td><td class="n" colspan="3">Tout est financé : 0 € sorti de la retraite</td><td class="n">0,00 €</td></tr>
+      </tbody></table></div>
+  <p class="note">Aides publiques = APA utilisée + aide à l’embauche + crédit d’impôt. Présence payée = coût employeur total (aides comprises) divisé par le reste à charge. Revenus nets famille = salaires nets de l’apprenti, du tuteur et de la sœur (3 contrats : 2 820,65 €/mois ; apprenti 44 h + tuteur : 2 409,98 € ; apprenti 35 h + tuteur : 1 854,99 €). Coût par heure : reste à charge divisé par les heures du mois (247 h, 208 h ou 169 h). Au palier A en GIR 1, l’APA couvre toutes les dépenses restantes.</p>
+  <h3 style="margin:30px 0 8px;font-weight:400;font-size:24px">Pour 100 € de coût, qui paie ? (3 contrats, 3 338,15 €/mois)</h3>
+  <div class="bars">
+    <div class="row"><span class="lab" style="width:92px">Hyp. basse</span><div class="track"><div class="stk"><i style="width:30.2%;background:#2f7fd0" title="APA">30 %</i><i style="width:12.5%;background:#90c6ec;color:#1f1f1d" title="Aide à l’embauche">12 %</i><i style="width:25.0%;background:#3e9a46" title="Crédit d’impôt">25 %</i><i style="width:32.3%;background:#e8622a" title="Retraite de maman">32 %</i></div></div></div>
+    <div class="row"><span class="lab" style="width:92px">GIR 2</span><div class="track"><div class="stk"><i style="width:47.0%;background:#2f7fd0" title="APA">47 %</i><i style="width:12.5%;background:#90c6ec;color:#1f1f1d" title="Aide à l’embauche">12 %</i><i style="width:20.3%;background:#3e9a46" title="Crédit d’impôt">20 %</i><i style="width:20.3%;background:#e8622a" title="Retraite de maman">20 %</i></div></div></div>
+    <div class="row"><span class="lab" style="width:92px">GIR 1</span><div class="track"><div class="stk"><i style="width:58.1%;background:#2f7fd0" title="APA">58 %</i><i style="width:12.5%;background:#90c6ec;color:#1f1f1d" title="Aide à l’embauche">12 %</i><i style="width:14.7%;background:#3e9a46" title="Crédit d’impôt">15 %</i><i style="width:14.7%;background:#e8622a" title="Retraite de maman">15 %</i></div></div></div>
+  </div>
+  <p class="note"><b style="color:#2f7fd0">■</b> APA &nbsp; <b style="color:#90c6ec">■</b> Aide à l’embauche de l’État &nbsp; <b style="color:#3e9a46">■</b> Crédit d’impôt &nbsp; <b style="color:#e8622a">■</b> Retraite de maman</p>
+  <div class="grid g3">
+    <div class="card"><h3>Hypothèse basse</h3><p>1 € de retraite mobilise <b>2,09 € d’aides</b> et paie <b>3,09 €</b> de présence. Chaque heure coûte 4,37 € à maman. Elle consacre 90 % de sa retraite au palier C.</p></div>
+    <div class="card ok"><h3>GIR 2</h3><p>1 € de retraite mobilise <b>3,93 € d’aides</b> et paie <b>4,93 €</b> de présence, pour 2,74 € par heure. Le reste à charge tombe à 56 % de la retraite.</p></div>
+    <div class="card ok"><h3>GIR 1</h3><p>1 € de retraite mobilise <b>5,79 € d’aides</b> et paie <b>6,79 €</b> de présence, pour 1,99 € par heure. Le reste à charge n’est plus que de 41 % de la retraite.</p></div>
+  </div>
+  <p class="note">Non comptées dans ce tableau : les exonérations de cotisations patronales liées à l’APA et à la CMI. L’échange les estime à 30 à 35 % du brut, soit environ 970 à 1 130 €/mois sur les trois contrats : sans elles, le coût employeur serait nettement plus élevé et le gain par euro dépensé plus faible. Chiffres issus des hypothèses du dossier, à confirmer avec les organismes concernés.</p>
 </div></section>
 
 <section id="portage"><div class="wrap">
@@ -500,6 +535,7 @@ footer{padding:28px 0 110px;font:14px system-ui,sans-serif;color:var(--mute)}
     {id:'aides',t:'Le financement',a:'assets/audio/nar-aides.mp3'},
     {id:'simulation',t:'La simulation',a:'assets/audio/nar-simulation.mp3'},
     {id:'alternatives',t:'Les alternatives par paliers',a:'assets/audio/nar-alternatives.mp3'},
+    {id:'gain',t:'Le gain par euro dépensé',a:'assets/audio/nar-gain.mp3'},
     {id:'portage',t:'Le portage',a:'assets/audio/nar-portage.mp3'},
     {id:'droits',t:'Les droits',a:'assets/audio/nar-droits.mp3'},
     {id:'cdd',t:'Le CDD transitoire',a:'assets/audio/nar-cdd.mp3'},
